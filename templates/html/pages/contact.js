@@ -1,0 +1,54 @@
+<e4x>
+	{extend("html/base.js")}
+    <block id='main'>
+        <div class="span-16 column first">
+            <div id='contact'>
+                <h3>contact</h3>
+                <p>
+                    <img src={$.env('root')+'images/goldrecord.png'} 
+                         alt='records of existence'
+                         height='70px'/>
+                    If you'ld like to get in touch, please do. We will try to respond quickly. 
+                    We gladly accept submissions.  However, keep in mind that we are a small 
+                    label with a limited amount of resources and time to put into our releases.  
+                    So many of our releases are done by hand with sizable investment of time.  
+                    This is a labor of love that we do to make the releases as unique as the 
+                    bands they showcase.  So if we LOVE it, we will put it out if we think 
+                    its a good fit.  
+                </p>
+                <p>
+                    We mostly focus on projects from our regional area in 
+                    the mid-atlantic as these are more often those we have come to call friends.  
+                    Our interests and tastes are diverse.  If you're a fan of what we do, we may
+                    very well be a good match.  stop by sometime.
+                </p>
+                <p align="center">
+                    <em>
+                        Records of Existence<br/>
+                          P.O. Box 995<br/>
+                       Shepherdstown, WV 25443
+                    </em><br/>
+                  <!--/**a href="mailto:info@recordsofexistence.org">
+                      info@recordsofexistence.org
+                  </a*/-->
+               </p>
+            </div>
+        </div>
+        <div class="span-7 column last">
+            <div id='mailing_list'>
+                <h3>mailing list</h3>
+                <p>Please join our list to keep up to date!</p>
+                <span>
+                    <a href="mailto:recordsofexistence@hotmail.com" 
+                        target="new">
+                          recordsofexistence mailing list
+                    </a>
+                </span>
+                <!--/**form action="mailinglist/subscribe" method="get">
+                    <input name="email" size="13" value="you@it.com" type="text"/>
+                    <input class="button" value="ok" type="submit"/>
+                </form*/-->
+            </div>
+         </div>
+    </block> 
+</e4x> 

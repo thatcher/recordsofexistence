@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <sitemap>
+     <page   name='home' 
+             location='/' 
+             description='default home page. provides a brief description of the label, \
+                          news, recent releases, and a calander of events.'/>
+     <page   name='artists' 
+             location='/artists' 
+             description='lists all artists'/>
+     <page   name='artist' 
+             location='/artist/id' 
+             global='false'
+             description='brief description of artist with list of releases'/>
+     <page   name='releases' 
+             location='/releases' 
+             description='all releases by release number'/>
+     <page   name='release' 
+             location='/release/id' 
+             global='false'
+             description='track listing and release description, \
+                          possibly includes links to reviews.'/>
+     <page   name='events' 
+             location='/events' 
+             optional='true'
+             global='false'
+             description='lists of all events reverse ordered by date.'/>
+     <page   name='event' 
+             location='/event/id' 
+             global='false'
+             description='breif description of event.'/>
+     <page   name='contact' 
+             location='/contact' 
+             description='contact info'/>
+     <service   name='cart' 
+                location='header' 
+                description='credit card orders'/>
+     <service   name='sharethis' 
+                location='footer' 
+                description='share the page with twitter eg'/>
+ </sitemap>

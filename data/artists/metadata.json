@@ -1,0 +1,101 @@
+{_:[ 
+/**************************************************\
+ * Artists Metadata *
+\**************************************************/
+ 
+    /**************************************************\
+     * Vox Populi *
+    \**************************************************/
+    {
+        id:'vox_populi',
+        name:'Vox Populi',
+        artist:'001',
+        description:<>
+            <p>
+                <strong>VOX POPULI</strong> was born as a creative act in 1990 as a 
+                collaboration of spoken word and music. It soon swelled into a 
+                multi-media event with spoken/sung thematic performances that included 
+                multiple found object percussionists/noise-ologists as well as traditional 
+                instruments, and at one point interpretive dance and video. the revolving 
+                cast included up to eight individuals and an ever progressing sound 
+                throughout multiple disbanding and reformations... little documentation 
+                of these early days remains unfortunately... over the years the band has 
+                slimmed to core devoted members and coalesced into a standard four peice 
+                outfit of melody and noise. thus it continues today.
+            </p>
+        </>
+    },
+    
+    
+    /**************************************************\
+     * Hovel *
+    \**************************************************/
+    {
+        id:'hovel',
+        name:'Hovel', 
+        artist:'002',
+        description:<>
+            <p>
+                <strong>HOVEL:</strong> Crushing poverty,rural isolation and a total 
+                disconnection from the dumbed down,corporate state of mainstream America; 
+                all key ingredients that fuel the backwoods psychedelic sludge that is 
+                Hovel.Exploiting a stripped down, bare-knuckle sound that brow beats 
+                listeners into cozy submission with backhand after bitch-slap of violent 
+                tribal grooves overlayed with thick slabs of stoned-out riffs that leave 
+                a harsh, ugly feeling like a two dollar hand- job behind the bus station. 
+                Hovel was formed in the fall of 2002 when long time friends resurfaced 
+                and churned-out a set's worth of material.Impatient and frustrated 
+                searching for the right vocalist Hovel chose to let their songs stand 
+                on their own as instrumentals. Hovel is currently finishing up mixing 
+                on their long overdue album and perfoming brawling -it -out live shows 
+                in dives and flophouses around the region.
+            </p>
+        </>
+    },
+    
+    /**************************************************\
+     * Nagato *
+    \**************************************************/
+    {
+        id:'nagato',
+        name:'Nagato', 
+        artist:'003',
+        description:<>
+            <p>
+                <strong>NAGATO:</strong> A new entity that has caught our attention 
+                fusing the discordant tension of post punk, the drive of gutter rock, 
+                and stoner ambience and groove.  Currently working on their first full 
+                length, we are happy to be making available their demo until its ready.  
+                enjoy and be prepared.
+            </p>
+        </>
+    },
+    
+    /**************************************************\
+     * theN.U.R.B-S. *
+    \**************************************************/
+    {
+        id:'thenurbs',
+        name:'theN.U.R.B-S.', 
+        artist:'005',
+        description:<>
+            <p>
+                <strong>theN.U.R.B-S.</strong> '...this is where surf music would be 
+                if all the futuristic '60s predictions came true. This dark and mysterious 
+                band sounds as if a very clean-cut and tattoo-free X cut the sound track 
+                for an independent movie. The sound is simple -- one string guitar by 
+                Chris Thatcher, a simple bass line by Dani Seiss, and competent Ventures-
+                influenced drums by Curt Seiss. The difference between [the]N.U.R.B-S and 
+                the earlier Ventures/Dick Dale/Beach Boys sound is the difference between 
+                LA punk and Phil Spector pop -- it's darker, and reflective of a society 
+                without optimism and struggling to get by. While things might get pretty bad, 
+                dating and surfing are still options, but the beach is polluted and everyone 
+                has an STD.' (Quoted from 
+                <a href='http://www.ink19.com/issues/august2007/musicReviews/musicN/nurbs.html'>
+                    Carl F Gauze
+                </a>)
+            </p>
+        </>
+    }
+    
+]}
