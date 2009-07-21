@@ -18,7 +18,6 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet> 
-	
     <!--
        The rhino dispatcher determines the very basic
 	   url patterns that are routed to jquery-claypool.

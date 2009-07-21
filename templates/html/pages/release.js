@@ -27,7 +27,9 @@
                     {_('.*', _$.release.tracks).map(function(index, title){
                         return {li:{
                             a:{
-                                $href:$.env('root')+'data/releases/'+_$.release.id+'/web/'+((index>10)?'':'0')+(index+1)+'.m4a',
+                                $target:  '_blank',
+                                $href:    $.env('root')+'data/releases/'+_$.release.id+'/web/mp3/'+
+                                            ((index>10)?'':'0')+(index+1)+'.mp3',
                                 $:[
                                     title,
                                     {img:{ $src:$.env('root')+'images/audio_bullet.gif' }}
@@ -64,9 +66,40 @@
                                 {p:{
                                     $align:'center',
                                     $:[
-                                        {em:this.format},{br:{}},
+                                        {em:this.format},
+                                        {br:{}},
                                         {span:{$class:'cost', $:'$'+this.price}},
-                                        {a:{$href:this.url, $:'[Buy]'}}
+                                        {br:{}},
+                                        {a:{
+                                            $href:'#',
+                                            $class:'paypal',
+                                            $title:'Add to Paypal cart',
+                                            $:['Add to Cart',{
+                                              form:{
+                                                $style:'display:none',
+                                                $target:'paypal',
+                                                $action:'https://www.paypal.com/cgi-bin/webscr',
+                                                $method:'post',
+                                                $:[
+                                                    {input:{
+                                                        $type:'hidden',
+                                                        $name:'cmd',
+                                                        $value:'_s-xclick'
+                                                    }},
+                                                    {input:{
+                                                        $type:'hidden',
+                                                        $name:'hosted_button_id',
+                                                        $value:this.url
+                                                    }},
+                                                    {input:{
+                                                        $type:'image',
+                                                        $src:'https://www.paypal.com/en_US/i/btn/btn_cart_LG.gif',
+                                                        $alt:'PayPal - The safer, easier way to pay online!',
+                                                        $name:'submit'
+                                                    }}
+                                                ]}  
+                                            }]
+                                        }}
                                     ]
                                 }}
                             ]
@@ -76,5 +109,15 @@
                 
             </div>
         </div>
-    </block> 
+    </block>
+    
+	<block id='script_extra'>
+		<script type='text/javascript' src={$.env('root')+"scripts/release.js"}>
+            <!--
+            /**
+             *  allows the style link to serve as the hidden form submit
+             */
+            -->
+        </script>
+	</block>
 </e4x> 

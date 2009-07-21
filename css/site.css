@@ -26,6 +26,9 @@ body a{
 body div.colborder{
     border-right-color:#999;
 }
+body form input{
+   margin:1em;
+}
 h1, h2, h3, h4, h5, h6 {
     color:#EEEEEE;
     font-weight:normal;
@@ -359,7 +362,7 @@ p{
 #release div.box{
     background-color:#000;
     border: 1px dashed #777;
-    padding:0;
+    padding:0.5em;
     float:left;
 }
 
@@ -386,7 +389,6 @@ p{
 #release #media ol{
     margin-left:2em;
 }
-
 
 /****************************
  * 
