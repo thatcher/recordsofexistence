@@ -35,7 +35,7 @@
                 We loved it enough to start a label to put it out!!!
             </p></>,
         pressings:[{
-            url:'#paypal/001/b',
+            url:'6957632',
             price:10,
             count:1000,
             format:'Compact Disc',
@@ -47,7 +47,7 @@
                 <p></p>
             </>
         },{
-            url:'#paypal/001/a',
+            url:'6957679',
             price:12,
             count:200,
             format:'Compact Disc',
