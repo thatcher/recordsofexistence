@@ -89,17 +89,17 @@ pages have an admin interface).  Locally you will be able to modify your databas
 but of course the back end urls are password protected at the live site:
 
 
-* "http://localhost:8080/artists?admin":http://localhost:8080/artists?admin
-* "http://localhost:8080/artist/roe001?admin":http://localhost:8080/artist/roe001?admin
-* "http://localhost:8080/release/roe001?admin":http://localhost:8080/release/roe001?admin
-* "http://localhost:8080/release/roe001?admin":http://localhost:8080/release/roe001?admin
+* "http://localhost:8080/artists?admin":http://localhost:8080/artists?admin=true
+* "http://localhost:8080/artist/roe001?admin":http://localhost:8080/artist/roe001?admin=true
+* "http://localhost:8080/release/roe001?admin":http://localhost:8080/release/roe001?admin=true
+* "http://localhost:8080/release/roe001?admin":http://localhost:8080/release/roe001?admin=true
 
 or for the impatient
 
-* "http://recordsofexistence.com/artists?admin":http://recordsofexistence.com/artists?admin
-* "http://recordsofexistence.com/artist/roe001?admin":http://recordsofexistence.com/artist/roe001?admin
-* "http://recordsofexistence.com/release/roe001?admin":http://recordsofexistence.com/release/roe001?admin
-* "http://recordsofexistence.com/release/roe001?admin":http://recordsofexistence.com/release/roe001?admin
+* "http://recordsofexistence.com/artists?admin":http://recordsofexistence.com/artists?admin=true
+* "http://recordsofexistence.com/artist/roe001?admin":http://recordsofexistence.com/artist/roe001?admin=true
+* "http://recordsofexistence.com/release/roe001?admin":http://recordsofexistence.com/release/roe001?admin=true
+* "http://recordsofexistence.com/release/roe001?admin":http://recordsofexistence.com/release/roe001?admin=true
 
 h2. Deploying
 
