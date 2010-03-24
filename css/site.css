@@ -9,6 +9,25 @@ body {
     color:#AAA;
     /*background-image:url(../images/outterspacesymbols_backgrou.jpg);*/
 }
+body #main div input, body #main div textarea{
+    border: 2px dotted #567;
+    padding:6px;
+    width:100%;
+    margin:10px 0;
+    background-color:#000;
+    color:#FFF;
+}
+body #main div input.addtocart{
+    border:medium none;
+    margin:auto 30px;
+    padding:6px;
+    width:80px;
+}
+
+body #main div input.submit{
+    border: 2px dotted #765;
+    width:128px;
+}
 body strong{
     color:#EEE;
     text-transform:uppercase;
@@ -18,6 +37,9 @@ body span{
 }
 body div{
     background-color:#000;
+}
+.stclose{
+    background-color:transparent;
 }
 body a{
     color:#EEE;
@@ -35,13 +57,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1, h2, h3{
     margin:0 0 1em 1em;
-    border-top:1px dotted #999999;
+    /*border-top:1px dotted #999999;*/
 }
 p{
     color:#DDD;
 }
 
-
+a:focus, a:hover {
+    color:#567;
+}
 
 
 
@@ -65,13 +89,7 @@ p{
 }
 
 
-
-
-
 /*****************************/
-
-
-
 
 
 #global-nav {
@@ -89,20 +107,17 @@ p{
     display:inline;
 }
 #global-nav  a{
-    color: #FFF;
+    border-bottom:1px dotted #fff;
+}
+#global-nav  a.stbutton{
+    border:none;
 }
 #global-nav  a:hover{
     color: #999;
 }
 
 
-
-
-
 /*****************************/
-
-
-
 
 
 #main{
@@ -115,18 +130,18 @@ p{
     color:white;
 }
 #main p {
-    margin:1em;
-    padding:1em;
+    /*margin:1em;*/
+    padding:0 1em;
+}
+#main .deleted{
+    border-top:1px dotted #993333;
+    border-bottom:1px dotted #993333;
+    background-color:#1a1010;
+    padding:3px;
 }
 
 
-
-
-
 /*****************************/
-
-
-
 
 
 #welcome {
@@ -137,11 +152,10 @@ p{
     border:none;
 }
 #welcome p{
-    border:1px dashed #999;
     color:#DDD;
     font-size:0.8em;
     text-transform:uppercase;
-    margin:0.5em 14em 3em;
+    margin:0.5em 1em 3em;
     font-family:"Arial Rounded MT Bold";
     
 }
@@ -165,6 +179,7 @@ p{
     margin:1em;
     border:1px dotted #888;
     margin-top:0;
+    clear:both;
 }
 #recentnews{
     border:none;
@@ -182,7 +197,6 @@ p{
     text-align:right;
     margin-right:2em;
     margin-left:6em;
-    border-bottom:1px dashed #999;
 }
 
 #recentnews h3 a{
@@ -219,10 +233,9 @@ p{
 
 #newreleases{
     margin:1em;
-    border:1px dotted #888;
 }
 #newreleases h3{
-   margin:1em 0 0 1em;
+   margin:0 1em;
    border:none;
 }
 #newreleases h3 a{
@@ -235,7 +248,7 @@ p{
 }
 #newreleases ul li img{
     border:1px dashed #999;
-    float:right;
+    float: left;
     margin:1em;
     padding:0.5em;
 }
@@ -254,14 +267,13 @@ p{
  * */
 #upcomingevents{
     margin:1em;
-    border:1px dotted #888;
 }
 #upcomingevents h3{
     border:none;
 }
 #upcomingevents p {
     margin:0;
-    padding:1em;
+    text-align:center;
 }
 #upcomingevents ul {
     list-style:none;
@@ -308,9 +320,6 @@ p{
     list-style:none;
     display:inline;
 }
-#releases ul li {
-    margin:1em;
-}
 #releases ul li img{
     border:  1px dotted #777;
     padding:1em;
@@ -342,7 +351,7 @@ p{
     padding:1em;
 }
 #release div img{
-    border:  1px dotted #777;
+    /*border:  1px dotted #777;*/
     padding:1em;
     margin:1em;
 }
@@ -361,7 +370,6 @@ p{
 
 #release div.box{
     background-color:#000;
-    border: 1px dashed #777;
     padding:0.5em;
     float:left;
 }
@@ -374,7 +382,6 @@ p{
     padding:0.1em;
 }
 #release a{
-    border-bottom:1px dashed #999999;
     text-decoration:none;
 }
 #release a:hover{
@@ -387,6 +394,7 @@ p{
     padding:0;
 }
 #release #media ol{
+    list-style-type:none;
     margin-left:2em;
 }
 
@@ -400,7 +408,7 @@ p{
     /*border:1px dotted #888;*/ 
 }
 #artists h3{
-   border-top:1px dotted #888;
+
    margin:0 1em 1em 1em;
 }
 #artists div{
@@ -432,10 +440,6 @@ p{
 #artists ul li a{
     text-decoration:none;
 }
-#artists ul li:hover{
-    padding:0px;
-    border:1px dashed #666;
-}
 
 
 
@@ -448,15 +452,12 @@ p{
 #artist{
     margin:0 1em 1em 1em;
 }
-#artist div{
-   margin:1em 0 0 1em;
-}
 #artist p {
     margin:1em;
     padding:1em;
 }
 #artist div img{
-    border:  1px dotted #777;
+    /*border:  1px dotted #777;*/
     padding:1em;
     margin:1em;
 }
@@ -488,7 +489,6 @@ p{
     margin:0 1em 1em 1em;
 }
 #contact h3{
-   border-top:1px dotted #999999;
    margin:0 1em 1em 1em;
 }
 #contact div{
@@ -509,7 +509,6 @@ p{
 
 #mailing_list{
     margin:1em;
-    border:1px dotted #888;
     padding-bottom:1em;
 }
 #mailing_list h3{
@@ -549,10 +548,6 @@ p{
 #events{
     margin:0 1em 0 1em;
 }
-#events h3{
-   border-top:1px dotted #999999;
-   margin:0 1em 1em 1em;
-}
 #events div{
    margin:1em 0 0 1em;
 }
@@ -571,7 +566,8 @@ p{
    margin-bottom:-4em;
 }
 #events div.event{
-    background:transparent none repeat scroll 0 0;
+    /*background:transparent none repeat scroll 0 0;*/
+    text-align:center;
 }
 #events div.event p{
    margin:0.3em;
@@ -588,20 +584,21 @@ p{
 #news{
     margin:0 1em 0 1em;
 }
-#news h3{
-   border-top:1px dotted #999999;
-   margin:0 1em 1em 1em;
-}
 #news h4{
    margin:1em 1em 1em 1em;
+    padding:0 4em;
 }
 #news strong{
-   margin:1em 1em 1em 1em;
+    float:right;
 }
 #news div{
    margin:1em 0 0 1em;
-   border:1px dotted #999;
+    padding:0 4em;
 }
+#news p{
+   margin:0 12em;   
+}
+
 #news img{
     margin:2em;
     padding:1em;
@@ -675,7 +672,7 @@ p{
 
 /****************************
  * 
- * #sharethisbutton
+ * #copyright
  * 
  * */
 #copyright {
@@ -687,3 +684,4 @@ p{
     padding:0;
 }
 /*****************************/
+

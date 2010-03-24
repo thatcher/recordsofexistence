@@ -204,7 +204,12 @@
             case 'null':
 
                 return String(value);
-                
+            
+            case 'xml':
+
+                return '"'+value.toXMLString().
+                            replace('\n', '\\\n', 'g').
+                            replace('"','\\"','g')+'"';    
             case 'object':
 
                 if (!value) {

@@ -14,7 +14,7 @@
         <servlet-class>claypool.server.Log4jInit</servlet-class>
         <init-param>
           <param-name>log4j-init-file</param-name>
-          <param-value>WEB-INF/logging.conf</param-value>
+          <param-value>/WEB-INF/logging.conf</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet> 
@@ -31,7 +31,7 @@
         <servlet-class>claypool.server.Servlet</servlet-class>    
         <init-param>
           <param-name>script-base</param-name>
-          <param-value>/WEB-INF/jsx/</param-value>
+          <param-value>/WEB-INF/</param-value>
         </init-param> 
         <init-param>
           <param-name>shell</param-name>
@@ -41,17 +41,47 @@
           <param-name>dispatch-function</param-name>
           <param-value>ClaypoolServerHandler</param-value>
         </init-param>  
-        <!-- Uncomment for production releases -->
+        <!-- Comment out for production releases -->
         <init-param>
           <param-name>active-reload</param-name>
           <param-value>false</param-value>
         </init-param>
-        
-        
         <load-on-startup>1</load-on-startup>
     </servlet>  
 	
 	<!-- jsx urls are routed to the dynamic service -->
+	
+	<!-- privileged urls -->
+    <servlet-mapping>
+        <servlet-name>rhino-dispatcher</servlet-name>
+        <url-pattern>/rest/</url-pattern> 
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>rhino-dispatcher</servlet-name>
+        <url-pattern>/rest/*</url-pattern> 
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>rhino-dispatcher</servlet-name>
+        <url-pattern>/admin</url-pattern> 
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>rhino-dispatcher</servlet-name>
+        <url-pattern>/admin/*</url-pattern> 
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>rhino-dispatcher</servlet-name>
+        <url-pattern>/manage</url-pattern> 
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>rhino-dispatcher</servlet-name>
+        <url-pattern>/manage/*</url-pattern> 
+    </servlet-mapping>
+    <!--servlet-mapping>
+        <servlet-name>rhino-dispatcher</servlet-name>
+        <url-pattern>/sdb/</url-pattern>  
+    </servlet-mapping-->
+    
+    <!-- unprivileged urls -->
     <servlet-mapping>
         <servlet-name>rhino-dispatcher</servlet-name>
         <url-pattern>/jsx/</url-pattern>
@@ -92,6 +122,14 @@
         <servlet-name>rhino-dispatcher</servlet-name>
         <url-pattern>/release/*</url-pattern> 
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>rhino-dispatcher</servlet-name>
+        <url-pattern>/pressings</url-pattern>  
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>rhino-dispatcher</servlet-name>
+        <url-pattern>/pressing/*</url-pattern>  
+    </servlet-mapping>
     
 	<!-- Sessions are available but not required for this example -->
 	<session-config>
@@ -112,17 +150,28 @@
 		web console servlet which basically allows us to execute arbitrary
 		javascript commands in the servers javascript shell context.
 	-->
-	<!--security-constraint>
-	  <web-resource-collection>
-	    <web-resource-name> Web Server Console </web-resource-name>
-	    <url-pattern>/admin/*</url-pattern>
-	  </web-resource-collection>
-	  <auth-constraint>
-	      <role-name>jquery-claypool-admin</role-name>
-	  </auth-constraint>
-	</security-constraint>
-	<login-config>
-	  <auth-method>BASIC</auth-method>
-	  <realm-name>jquery-claypool server console</realm-name>
-	</login-config-->
+	<security-constraint>
+        <web-resource-collection>
+            <url-pattern>/admin/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-constraint>
+        <web-resource-collection>
+            <url-pattern>/manage/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-constraint>
+        <web-resource-collection>
+            <url-pattern>/rest/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
 </web-app>
