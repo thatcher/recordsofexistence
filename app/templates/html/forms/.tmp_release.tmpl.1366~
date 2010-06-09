@@ -1,0 +1,77 @@
+<form id='editRelease' 
+      method='post' 
+      action='${ $.env("root")+"admin/save/releases/"+release.$id }'>
+
+    <div class='column span-18 push-3' >
+        
+        <span class= "ss_sprite  ss_comment_add">
+            edit release description |
+        </span>
+        <textarea
+            id='description'
+            name='description'
+            style='border-bottom:1px dotted #567'>
+            ${ release.description }
+       </textarea>
+       
+       
+                <span class="ss_sprite  ss_comment_add">
+                    edit release name |
+                </span>
+                <input 
+                    type=  'text' 
+                    name=  'name'
+                    value= '${ release.name }'
+                />
+                <input 
+                    type=  'hidden' 
+                    name=  'artist'
+                    value= '${ artist.$id }'
+                />
+                <br/>
+                <span  class="ss_sprite  ss_image_add">
+                    edit release image |
+                </span>
+                <input 
+                    id=    'image'
+                    type=  'text' 
+                    name=  'image'
+                    value= '${ release.image }'
+                />
+                <br/>
+                <input 
+                    id=    'submitRelease'
+                    type=  'submit' 
+                    value= 'save'
+                    class= 'submit'
+                />
+                <ul>
+                    {{ each(i, tracks) release.tracks }}
+                    <li>
+                        <span class= "ss_sprite  ss_delete">
+                            <a href='${ $.env("root")+"admin/remove/tracks/"+"?release="+release.$id+"&index="+index }'>
+                                remove track | 
+                            </a>
+                        </span>
+                        <input 
+                            id=    '${ "tracks."+index }'
+                            type=  'text' 
+                            name=  '${ "tracks."+index }'
+                            value= '${ title }'
+                        />
+                    </li>
+                    {{ /each }}
+                
+                    <li>
+                         <span class: "ss_sprite  ss_add">
+                            <a id=    'track.${ release.tracks.length }' 
+                               href=  '${ $.env("root")+"admin/add/tracks/?release="+release.$id }'
+                               name=  'track.${ release.tracks.length }'> 
+                               Add a new track
+                            </a>
+                        </span>
+                    </li>
+                </ul>
+    </div>
+    
+</form>

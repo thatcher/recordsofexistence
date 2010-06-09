@@ -1,0 +1,105 @@
+{{ extend $.env("templates")+"html/base.tmpl" }}
+    
+{{ block title }}
+    <title>Records of Existence Artist {artist.name}</title>
+{{ /block }}
+
+{{ block main }}
+<form id='editArtist' 
+    method='post' 
+    action='${ $.env("root")+"admin/save/artists/"+artist.$id }'>
+    <div id='artist'>
+        <h3>
+            <a href='${ $.env("root")+"artists" }'>
+                &lt; artists
+            </a>
+        </h3>
+        <div class='first column span-7 prepend-2 colborder'>
+            {{ if admin }}
+            <span class: "ss_sprite  ss_comment_add">
+              edit artist name  
+            </span>
+            {{ /if }}
+            <h4>
+            {{ if !admin }}
+            artist.name
+            {{ else }} 
+            <input 
+                id='name' 
+                type='text' 
+                name='name'
+                value='${ artist.name }'
+            />
+            {{ /if }}
+            </h4>
+            {{ if admin }}
+            <span class: "ss_sprite  ss_image_add">
+              edit artist image 
+            </span>
+            <br/>
+            <input
+                id='image' 
+                type='text'
+                name='image'
+                value='${ artist.image }'
+            />
+            {{ /if }}
+            <img src='${ $.env("data")+artist.image }' 
+                 alt='${ artist.image }'  
+                 height='150px'/>
+            <strong>releases</strong>
+            <ul>
+                {{ each releases }}
+                <li>
+                    {{ if !admin }}
+                    <a href='${ $.env("root")+"release/"+this.$id }'>
+                        ${ this.name }
+                    </a>
+                    {{ else }}
+                    <span class="ss_sprite  ss_delete">
+                        <a href='${ $.env("root")+"admin/remove/releases/"+this.$id }'>
+                             remove this release 
+                        </a> | 
+                    </span>
+                    <span class="ss_sprite  ss_comment_add">
+                        <a href='${ $.env("root")+"release/"+this.$id+"?admin" }'>
+                             edit this release 
+                        </a> 
+                    </span>
+                    <br/>
+                    ${ this.name }
+                    {{ /if }}
+                </li>
+                {{ if admin }}
+                <li>
+                     <a href='${ $.env("root")+"admin/add/releases/?artist="+artist.$id }'></a>
+                         <span class="ss_sprite  ss_add">
+                             Add Release
+                         </span>
+                     </a>
+                 </li>
+                 {{ /if }} 
+                 {{ /each }}
+            </ul>
+        </div>
+        <div class=' last column span-12'>
+            {{ if !admin }}
+            <p>${ artist.description }</p>
+            {{ else }}
+            <span class="ss_sprite  ss_comment_add">
+                  edit artist description  
+            </span>
+            <textarea id='description'
+                name='description'>
+                ${ artist.description }
+            </textarea>
+            <input
+                type='submit' 
+                value='save' 
+                class='submit'
+            />
+            {{ /if }}
+        </div>
+    </div>
+</form>
+{{ /block }}

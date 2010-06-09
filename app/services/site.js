@@ -29,7 +29,7 @@
                 event.
                     m({
                         artists:   results,
-                        template:  'html/pages/artists.js'
+                        template:  $.env('templates') +'html/pages/artists.tmpl'
                     }).
                     render();
             });
@@ -41,10 +41,9 @@
             
             var artist,
                 releases;
-                
+            
             Artists.forId(id, function(result){
                 artist = result;
-                
                 //find the releases for this artist
                 Releases.forArtist(id, function(results){
                     releases = results;
@@ -53,7 +52,7 @@
                             id:         id,
                             artist:     artist,
                             releases:   releases,
-                            template:   'html/pages/artist.js'
+                            template:   $.env('templates') +'html/pages/artist.tmpl'
                         }).
                         render();
                     
@@ -64,11 +63,11 @@
         events: function(event){
             log.debug('Serving events page.');
             var query = (event.m('admin'))?'all':'current';
-            Events['all'](function(results){
+            Events[query](function(results){
                 event.
                     m({
                         events:   results,
-                        template:  'html/pages/events.js'
+                        template:  $.env('templates') +'html/pages/events.tmpl'
                     }).
                     render();
             });
@@ -76,7 +75,7 @@
         
         contact: function(event){
             event.
-                m({template:  'html/pages/contact.js'}).
+                m({template:  $.env('templates') +'html/pages/contact.tmpl'}).
                 render();
         },
         
@@ -109,7 +108,7 @@
                                 recent:     recent,
                                 news:       news,
                                 events:     events,
-                                template:   'html/pages/home.js'
+                                template:   $.env('templates') +'html/pages/home.tmpl'
                             }).
                             render();
                     });
@@ -125,7 +124,7 @@
                 event.
                     m({
                         releases:   results,
-                        template:   'html/pages/releases.js'
+                        template:   $.env('templates') +'html/pages/releases.tmpl'
                     }).
                     render();
             });
@@ -140,15 +139,16 @@
                 //find the artist for this release
                 Artists.forId(release.artist,  function(artist){
                     
+                    var query = (event.m('admin'))?'forRelease':'currentForRelease';
                     //finally find the pressings for this release
-                    Pressings.forRelease(id, function(pressings){
+                    Pressings[query](id, function(pressings){
                         event.
                             m({
                                 id:         id,
                                 artist:     artist,
                                 release:    release,
                                 pressings:  pressings,
-                                template:   'html/pages/release.js?id='+release.id
+                                template:   $.env('templates') + 'html/pages/release.tmpl?id='+release.id
                             }).
                             render();
                     });
@@ -164,19 +164,7 @@
                 event.
                     m({
                         news:   results,
-                        template:  'html/pages/news.js'
-                    }).
-                    render();
-            });
-        },
-        
-        pressings: function(event){
-            log.debug('Serving pressings page.');
-            Pressings.all(function(results){
-                event.
-                    m({
-                        news:   results,
-                        template:  'html/pages/pressings.js'
+                        template:  $.env('templates') +'html/pages/news.tmpl'
                     }).
                     render();
             });

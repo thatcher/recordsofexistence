@@ -92,12 +92,9 @@ body #main form .ss_sprite a{
     width:100px;
 }
 #main #news form .date {
-    text-align:right;
     width:200px;
-    float:right;
-    padding:0;
-    height:36px;
     font-size:12px;
+    margin-left:60px;
 }
 #main #news hr {
     background-color:#567;

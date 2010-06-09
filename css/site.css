@@ -1,5 +1,5 @@
 body {
-    border: 1px #ffffff;
+    border: 1px #EEEEEE;
     padding: 0;
     background-color: #1a1a1a;
     margin-top:1em;
@@ -11,11 +11,11 @@ body {
 }
 body #main div input, body #main div textarea{
     border: 2px dotted #567;
-    padding:6px;
-    width:100%;
+    /*padding:6px;*/
+    /*width:100%;*/
     margin:10px 0;
     background-color:#000;
-    color:#FFF;
+    color:#EEE;
 }
 body #main div input.addtocart{
     border:medium none;
@@ -29,7 +29,6 @@ body #main div input.submit{
     width:128px;
 }
 body strong{
-    color:#EEE;
     text-transform:uppercase;
 }
 body span{
@@ -42,8 +41,12 @@ body div{
     background-color:transparent;
 }
 body a{
-    color:#EEE;
-    text-decoration:none;
+    color:#678;
+    border-bottom:1px dashed #777777;
+    text-decoration: none;
+}
+body img a{
+    color:#678;
 }
 body div.colborder{
     border-right-color:#999;
@@ -51,21 +54,24 @@ body div.colborder{
 body form input{
    margin:1em;
 }
-h1, h2, h3, h4, h5, h6 {
-    color:#EEEEEE;
+h1, h2, h3, h4, h5, h6, strong, span.small {
+    color:#678;
     font-weight:normal;
+    
 }
 h1, h2, h3{
     margin:0 0 1em 1em;
+    color:#678;
     /*border-top:1px dotted #999999;*/
 }
+a:hover{
+   color:#EEE;
+}
+
 p{
     color:#DDD;
 }
 
-a:focus, a:hover {
-    color:#567;
-}
 
 
 
@@ -107,7 +113,7 @@ a:focus, a:hover {
     display:inline;
 }
 #global-nav  a{
-    border-bottom:1px dotted #fff;
+    border-bottom:1px dotted #EEE;
 }
 #global-nav  a.stbutton{
     border:none;
@@ -127,7 +133,6 @@ a:focus, a:hover {
 #main h3{
     background-color:#000;
     padding:4px;
-    color:white;
 }
 #main p {
     /*margin:1em;*/
@@ -152,12 +157,12 @@ a:focus, a:hover {
     border:none;
 }
 #welcome p{
-    color:#DDD;
+    color:#888;
     font-size:0.8em;
     text-transform:uppercase;
     margin:0.5em 1em 3em;
     font-family:"Arial Rounded MT Bold";
-    
+    text-align:center;
 }
 #welcome p img{
     /*border:1px dashed #777;*/
@@ -200,9 +205,6 @@ a:focus, a:hover {
 }
 
 #recentnews h3 a{
-   color:#FFF;
-   text-decoration:none;
-   border:none;
    float:none;
    margin:0;
 }
@@ -212,17 +214,10 @@ a:focus, a:hover {
    float:none;
 }
 #recentnews a{
-   color:#CCC;
-   text-decoration:none;
    border-bottom:1px dashed #777;
    margin:1em;
    float:right;
 }
-#recentnews a:hover{
-   color:#FFF;
-   border-bottom:1px dashed #FFF;
-}
-
 
 
 /*****************************/
@@ -238,22 +233,18 @@ a:focus, a:hover {
    margin:0 1em;
    border:none;
 }
-#newreleases h3 a{
-   color:#FFF;
-   text-decoration:none;
-}
 #newreleases ul {
     list-style:none;
     display:inline;
 }
 #newreleases ul li img{
-    border:1px dashed #999;
+    border:1px dotted #999;
     float: left;
     margin:1em;
     padding:0.5em;
 }
 #newreleases ul li img:hover{
-    border:1px dashed #FFF;
+    border:1px dashed #EEE;
 }
 
 
@@ -284,11 +275,11 @@ a:focus, a:hover {
     text-align:center;
 }
 #upcomingevents ul li img{
-    border:1px dashed #999;
+    border:1px dotted #999;
     padding:1em;
 }
 #upcomingevents ul li img:hover{
-    border:1px dashed #FFF;
+    border:1px dashed #EEE;
 }
 #upcomingevents ul li h6{
     margin-bottom:5px;
@@ -308,9 +299,6 @@ a:focus, a:hover {
 }
 #releases div{
    margin:1em 0 0 1em;
-}
-#releases span{
-    color:#DDD;
 }
 #releases p {
     margin:1em;
@@ -335,7 +323,9 @@ a:focus, a:hover {
     margin-top:-35px;
 }
 
-
+#releases .small{
+    margin: 0 25px;
+}
 
 
 /****************************
@@ -365,7 +355,7 @@ a:focus, a:hover {
     text-decoration:none;
 }
 #release div ul li a:hover{
-    color:#FFF;
+    color:#EEE;
 }
 
 #release div.box{
@@ -385,7 +375,7 @@ a:focus, a:hover {
     text-decoration:none;
 }
 #release a:hover{
-    color:#FFF;
+    color:#EEE;
 }
 
 #release #media img{
@@ -426,6 +416,10 @@ a:focus, a:hover {
     margin:1em;
     padding:1px;
 }
+#artists ul li:hover {
+    border: 1px dotted #999;
+    padding:0px;
+}
 #artists div.first ul li {
     text-align: right;
 }
@@ -433,13 +427,14 @@ a:focus, a:hover {
     text-align: left;
 }
 #artists ul li img{
-    border:2px dotted #999;
+    border:1px dotted #999;
     padding:1em;
     margin:0.5em 0.5em 0 0.5em;
 }
 #artists ul li a{
     text-decoration:none;
 }
+
 
 
 
@@ -471,10 +466,10 @@ a:focus, a:hover {
     text-decoration:none;
 }
 #artist a{
-    border-bottom:1px dashed #fff;
+    border-bottom:1px dashed #EEE;
 }
 #artist a:hover{
-    color:#FFF;
+    color:#EEE;
 }
 
 
@@ -501,7 +496,7 @@ a:focus, a:hover {
     float:right;
 }
 #contact  a{
-   color:#FFF;
+   color:#EEE;
    text-decoration:none;
 }
 
@@ -533,10 +528,10 @@ a:focus, a:hover {
 #mailing_list  a{
    color:#AAA;
    text-decoration:none;
-   border-bottom:1px dashed #FFF;
+   border-bottom:1px dashed #EEE;
 }
 #mailing_list  a:hover{
-   color:#FFF;
+   color:#EEE;
 }
 
 
@@ -557,7 +552,7 @@ a:focus, a:hover {
     border:1px dashed #777;
 }
 #events  a{
-   color:#FFF;
+   color:#EEE;
    text-decoration:none;
 }
 #events  hr{
@@ -605,7 +600,7 @@ a:focus, a:hover {
     border:1px dashed #777;
 }
 #news  a{
-   color:#FFF;
+   color:#EEE;
    text-decoration:none;
 }
 /****************************
@@ -665,7 +660,7 @@ a:focus, a:hover {
    margin:0;
 }
 #sharethisbutton a{
-    color:#FFF;
+    color:#EEE;
     
 }
 

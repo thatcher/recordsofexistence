@@ -133,10 +133,14 @@
     			return value === undefined ? this[0] != null && this[0][key] : this.each(function(){
     				this[key] = value;
     			});
-    		}
+    		},
+            setArray: function(array){
+                this.length = 0;
+                return Array.prototype.push.apply(this, array);
+            }
     	});
     	//all these methods can be used in the collections, and are exactly (and literally) like in jQuery.
-    	$collection.fn.include( $.fn, 'each,extend,index,setArray,get,size,eq,slice,map,andSelf' );
+    	$collection.fn.include( $.fn, 'each,extend,index,get,size,eq,slice,map,andSelf' );
     		
     })( jQuery );
     
@@ -161,7 +165,7 @@
 	
 	jsPath.fn.init = function(path, jsObject, pathOrResult){
 		if(arguments.length === 0){
-			return this.setArray(__context__.length?
+			return this.init(__context__.length?
 				__context__:[__context__]);
 		}
 		if (!jsObject) {
@@ -171,14 +175,14 @@
 		//it should set the context.
 		if (!(typeof path == "string")) {
 			__context__ = path;
-			return this.setArray(__context__.length?
+			return this.init(__context__.length?
 				__context__:[__context__]);
 		}else{
 			//we save the user from having to prepend $ on every query
 			path = "$"+path;
 		}
 		var result = jsonPath(jsObject, path, pathOrResult)||[];
-		return this.setArray(result);
+		return this.init(result);
 	};
 	
 	jsPath.fn.include( Array.prototype, 'join,push' );

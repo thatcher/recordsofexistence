@@ -1,0 +1,74 @@
+<form id='editPressings-${ this.$id }'
+      method='post'
+      action='/admin/save/pressings/${ this.$id }'>
+    <input
+        type='hidden'
+        name='$id'
+        value='${ this.$id }'
+    />   
+    <div class='pressing span-22 ${ this.deleted? "deleted" : "" }'>
+        
+        <div class='first column span-13 prepend-2 colborder'>
+            <span style= "float:left;"
+                  class= "ss_sprite  ss_delete" >
+                <a  id='pressings/${ this.$id }' 
+                    href='${ $.env("root") }admin/${ (this.deleted.length?"restore":"remove" ) }/pressings/${ this.$id }?release=${ this.release }'>
+                     | ${ (this.deleted.length?"restore":"remove") } release 
+                </a>
+            </span>
+            <span class= "ss_sprite  ss_comment_add">
+               edit pressing description | 
+            </span>
+            <textarea
+                id=    'description'
+                name=  'description'
+            >${ this.description }</textarea>
+            <input
+                type=  'hidden' 
+                name=  'release'
+                value= '${ this.release }'
+            />
+            <input
+                type=  'submit'
+                value= 'save'
+                class= 'submit'
+            />
+        </div>
+        <div class='last column small box span-4'>
+            <h6>purchase this pressing</h6>
+            <p align='center'>
+                    <span class= "ss_sprite  ss_cd">
+                       edit release format | 
+                    </span>
+                    <input
+                        id=    'format' 
+                        type=  'text'
+                        name=  'format'
+                        value= '${ this.format }'
+                    />
+                    <br/>
+                    <span class= "ss_sprite  ss_money">
+                        edit release price | 
+                    </span>
+                    <input
+                        id=    'price' 
+                        type=  'text'
+                        name=  'price'
+                        value= '${ this.price }'
+                    />
+                    <br/>
+                    <span class= "ss_sprite  ss_creditcards ">
+                        edit release ska | 
+                    </span>
+                    <input
+                        id=    'ska' 
+                        type=  'text'
+                        name=  'ska'
+                        value= '${ this.ska }'
+                    />
+            </p>
+        </div>
+                
+    </div>
+    
+</form>

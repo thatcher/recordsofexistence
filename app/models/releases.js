@@ -28,6 +28,11 @@
                 not:[null],
                 msg:'The human readable name of the release.'
             },
+            label_id:{
+                pattern:/^.{1,64}$/,
+                not:[null],
+                msg:'The release control number.'
+            },
             description:{
                 pattern:/^.{1,1024}$/,
                 not:[null],
@@ -145,21 +150,47 @@
                 }
             });
         },
+        
+        changeArtistId: function(oldID, newID){
+            var _this = this;
+            this.forArtist(oldID, function(artists){
+                if(artists)
+                    log.debug('found %s pressing to change release id', artists.length);
+                $(artists).each(function(){
+                    var releaseId = this.$id;
+                    this.artist = newID;
+                    _this.save({
+                        id: this.$id,
+                        async: false,
+                        data: this,
+                        success: function(){
+                            log.info('successfully changed release id for pressing %s',releaseId);
+                        },
+                        error: function(xhr, status, e){
+                            log.error('failed to changed release id for pressing %s',releaseId)
+                               .exception(e);
+                        }
+                    })
+                });
+            });
+        },
+        
         template: function(options){
             log.debug('generating template artist for %s', options.$id );
-            var random_count = Math.floor(Math.random()*20),
+            var count = 7,
                 template_tracks = [];
-            for (var i=0;i<random_count;i++){
-                template_tracks[i] = (i<10?'0'+i:''+i)+'. '+jsPath.titled(3, false);
+            for (var i=0;i<count;i++){
+                template_tracks[i] = (i<10?'0'+i:''+i)+'. '+$.title(3, false);
             }
             return $.extend({
                 $id:            options.$id||'roe404',
-                name:           jsPath.titled(2, false),
-                description:    jsPath.paragraph(false),
+                name:           $.title(2, false),
+                description:    $.paragraph(false),
                 artist:         'roe000',
                 image:          'error/thumb.jpg',
                 tracks:         template_tracks,
-                deleted:        ''
+                deleted:        '',
+                label_id:        ''
             }, options);
         }
     });

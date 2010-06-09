@@ -90,10 +90,10 @@
         template: function(options){
             return $.extend(true, {
                 $id:'roe404',
-                title:jsPath.titled(3, false),
+                title:$.title(3, false),
                 date:new Date()+'',
-                location:jsPath.words(5, false),
-                description: jsPath.sentence(),
+                location:$.words(3, false).join(' '),
+                description: $.sentence(),
                 image:'error/thumb.jpg',
                 deleted:''
             }, options );

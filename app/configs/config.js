@@ -8,8 +8,7 @@ var RecordsOfExistence = {
 	Models:{},
 	Views:{},
 	Controllers:{},
-	Services:{},
-    Metadata:{}
+	Services:{}
 };
 (function($){
  	
@@ -17,6 +16,7 @@ var RecordsOfExistence = {
         "RecordsOfExistence.Models",    
         "RecordsOfExistence.Views",     
         "RecordsOfExistence.Services",
+        "Claypool.Services",
         "GAE.Services"
     ]);
     

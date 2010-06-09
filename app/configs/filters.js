@@ -1,49 +1,67 @@
 /**
  *
- * Copyright (c) 2008-2009 ClaypoolJS
+ * Copyright (c) 2008-2009 RecordsOfExistenceJS
  *
  */
-(function($, _){
+(function($){
 
     var log;
     
     $.filters([{
+
         id        : "#requestResponseParamFilter",
         target    : "RecordsOfExistence.Services.*",
         before    : "([a-z]*)",
-        advice    : function(event){
+        advice    : function(event, response){
             log = log||$.logger('RecordsOfExistence.Filters');
-            log.debug('Adding normalized event state to event scoped model');
-            var params = event.params('parameters');
+            log.debug( 'Adding normalized event state to event scoped model' );
+            var params = event.params( 'parameters' );
             
-            event.
-                m({admin:('admin' in params)?true:false }).
-                m(event.params());
+            if('admin' in params){
+                log.info('Cookie %s', event.request.headers.Cookie);
+                if( !event.request.headers.Cookie || !event.request.headers.Cookie.match(/:true:/) ){
+                    event.response.headers =  {
+                        status:   302,
+                        "Location": '/_ah/login?continue='+event.request.requestURL + '?admin'
+                    }
+                }else{
+                    event.m({ admin: true });
+                }
+            }else{
+                event.m({ admin: false });
+            }
         }
+        
     },{
+
         id        : "#contentNegotiationFilter",
         target    : "RecordsOfExistence.Views.*",
-        around    : "(render)",
+        around    : "(write)",
         advice    : function(invocation){
+
+            var model = invocation.arguments[0],
+                event = invocation.arguments[1],
+                view =  invocation.object;
+                
             log = log||$.logger('RecordsOfExistence.Filters');
             log.debug('Intercepted call to render');
-            var model = invocation.arguments[0],
-                view = invocation.object;
-            if(model.parameters.fo == 'json'){
-                model.headers['Content-Type']='text/javascript';
-                return view.write(_.json(model, null, '\t'));
-                //do not proceed
-            }else if(model.parameters.fo == 'xml'){
-                model.headers['Content-Type']='application/xml';
-                return view.write(_.x({x:model}));
-                //do not proceed
-            }else{
-                if('template' in model)
-                    model.template += '?'+new Date().getTime();
-                return invocation.proceed();
-            }
+                
+            switch( event.params('fo') ){
+                case 'json':
+                    event.response.headers['Content-Type']='text/plain; charset=utf-8';
+                    return  $.json(model, null, '    ');
+                    break;//do not proceed
+                case 'xml':
+                    event.response.headers['Content-Type']='application/xml; charset=utf-8';
+                    return $.x({x:model});
+                    break;//do not proceed
+                default:
+                    if('template' in model)
+                        model.template += '?'+new Date().getTime();
+                    return invocation.proceed();
+            }    
         }
     }]);
 
-})(jQuery, jsPath);
-    
+})(jQuery);
+

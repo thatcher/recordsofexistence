@@ -19,7 +19,7 @@ appengine dev is here:
 
 All you need to do is unzip it (we'll assume unix-like paths) and run:
 
-@$> /path/to/appengine/bin/dev/dev_appserver.sh /path/to/recordsofexistence/@
+@$> /path/to/appengine/bin/dev_appserver.sh /path/to/recordsofexistence/@
 
 At this point you should be able to open up a browser see
 
@@ -106,7 +106,7 @@ h2. Deploying
 p. When you are ready to deploy, it is basically as simple as toggling you environment in
 app/boot/server.js from
 
-@$.env('defaults', "dev.client"); 
+@$.env('defaults', "dev.client");
 //$.env('defaults', "appengine.server");@
    
    to

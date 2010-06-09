@@ -1,0 +1,116 @@
+<form id='editRelease' 
+      method='post' 
+      action='${ $.env("root")+"admin/save/releases/"+release.$id }'>
+    <div class='first column span-5 colborder push-1'>
+        
+        <span class="ss_sprite  ss_comment_add">
+            edit release name |
+        </span>
+        <em>Release</em><br/>
+        <input 
+            type=  'text' 
+            name=  'name'
+            value= '${ release.name }'
+        />
+        <h5>
+            <a href='#'>
+                ${ artist.name }
+            </a>
+        </h5>
+        <span  class="ss_sprite  ss_comment_add">
+            edit release id |
+        </span>
+        <input 
+            id=    '$id'
+            type=  'text' 
+            name=  '$id'
+            value= '${ release.$id }'
+        />
+        <br/>
+        <span  class="ss_sprite  ss_comment_add">
+            edit label id |
+        </span>
+        <input 
+            id=    'label_id'
+            type=  'text' 
+            name=  'label_id'
+            value= '${ release.label_id }'
+        />
+        <br/>
+        <span  class="ss_sprite  ss_image_add">
+            edit release image |
+        </span>
+        <input 
+            id=    'image'
+            type=  'text' 
+            name=  'image'
+            value= '${ release.image }'
+        />
+        <br/>
+        <input 
+            type=  'hidden' 
+            name=  'artist'
+            value= '${ artist.$id }'
+        />
+        <br/>
+        <input 
+            id=    'submitRelease'
+            type=  'submit' 
+            value= 'save'
+            class= 'submit'
+        />
+    </div>
+       
+    <div id='cover' 
+         class='column span-6 colborder'>
+        <img src='${ $.env("data")+release.image }' 
+             alt='release image'  
+             height='150px'
+        />
+    </div>
+    
+    <div id='media' 
+         class='column span-9'>
+        
+        <ul>
+            {{ each(index, title) release.tracks }}
+            <li>
+                <span class= "ss_sprite  ss_delete">
+                    <a href='${ $.env("root")+"admin/remove/tracks/"+"?release="+release.$id+"&index="+index }'>
+                        remove track | 
+                    </a>
+                <input 
+                    id=    '${ "tracks."+index }'
+                    type=  'text' 
+                    name=  '${ "tracks."+index }'
+                    value= '${ title }'
+                />
+                </span>
+            </li>
+            {{ /each }}
+        
+            <li>
+                 <span class= "ss_sprite  ss_add">
+                    <a id=    'track.${ release.tracks.length }' 
+                       href=  '${ $.env("root")+"admin/add/tracks/?release="+release.$id }'
+                       name=  'track.${ release.tracks.length }'> 
+                       Add a new track
+                    </a>
+                </span>
+            </li>
+        </ul>
+    </div>
+    
+    <div class='column span-18 push-3' >
+        <span class= "ss_sprite  ss_comment_add">
+            edit release description |
+        </span>
+        <textarea
+            id='description'
+            name='description'
+            style='border-bottom:1px dotted #567'
+        >${ release.description }</textarea>
+    </div>
+    
+    
+</form>

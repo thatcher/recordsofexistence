@@ -102,8 +102,8 @@
             log.debug('generating template artist');
             return $.extend({
                 $id:            'roe404',
-                name:           jsPath.titled(2, false),
-                description:    jsPath.paragraphs(1, false),
+                name:           $.title(2, false),
+                description:    $.paragraphs(1, false),
                 image:          'error/thumb.jpg',
                 deleted:        ''
             }, options );

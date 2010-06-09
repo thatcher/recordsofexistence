@@ -9,10 +9,17 @@
 	//  -   ENVIRONMENTAL CONFIGURATION   -
 	//______________________________________________________________________________________//
 	$.env({
+        automap:{
+            'file:///opt':          'dev.server',
+            'file:///base':         'prod.server',
+            'http://localhost':     'dev.client',
+            'appspot.com':          'prod.client'
+        },
 	    defaults:{
             root:'/',
 			context_dir:cwd,
 			templates:'app/templates/',
+            initialdata:'http://localhost:8080/data/',
             data:'http://localhost:8080/data/',
             host:'sdb.amazonaws.com',
             dataType:'text',
@@ -31,12 +38,13 @@
 	    //-------------------------------------------------------------------------------------//
 	    //  -   APPENGINE CONFIGURATION   -
 	    //______________________________________________________________________________________//
-	    appengine:{
+	    prod:{
 	        server:{
                 root:'/',
 	            templates:'http://recordsofexistence.appspot.com/app/templates/',
-                //data:'http://recordsofexistence.appspot.com/app/data/'
-	            data:'http://roe-data.s3.amazonaws.com/'
+                initialdata:'http://recordsofexistence.appspot.com/data/',
+	            //data:'http://roe-data.s3.amazonaws.com/'
+                data:'http://roe-prod.s3.amazonaws.com/'
 	        }
 	    },
 	    //-------------------------------------------------------------------------------------//

@@ -1,0 +1,41 @@
+{{ extend $.env("templates")+"html/base.tmpl" }}
+    
+{{ block title }}
+    <title>Records of Existence Artist ${ artist.name }</title>
+{{ /block }}
+
+{{ block main }}
+<div id='artist'>
+    <h3>
+        <a href='${ $.env("root")+"artists" }'>
+            &lt; artists
+        </a>
+    </h3>
+    {{ if admin }}
+        {{ include $.env("templates")+"html/forms/artist.tmpl?"+(new Date().getTime()) }}
+    {{ else }}
+    <div class='first column span-7 prepend-2 colborder'>
+        
+        <h4>
+            ${ artist.name }
+        </h4>
+        <img src='${ $.env("data")+artist.image }' 
+             alt='${ artist.image }'  
+             height='150px'/>
+        <strong>releases</strong>
+        <ul>
+            {{ each releases }}
+            <li>
+                <a href='${ $.env("root")+"release/"+this.$id }'>
+                    ${ this.name }
+                </a>
+            </li>
+             {{ /each }}
+        </ul>
+    </div>
+    <div class=' last column span-12'>
+        <p>${ artist.description }</p>
+    </div>
+    {{ /if }}
+</div>
+{{ /block }}

@@ -1,9 +1,6 @@
 /**
  * @author thatcher
  */
-/**
- * @author thatcher
- */
 (function($, $S){
     
     var log,
@@ -45,11 +42,13 @@
         },
         syncdb: function(targets){
             //creates domain (tables) for each model
-            var data;
+            var data,
+                data_url = $.env('initialdata')+'__initial__.json?'+$.uuid();
+            log.info('loading initial data from %s', data_url);
             $.ajax({
                 type:'GET',
                 async:false,
-                url:$.env('data')+'/__initial__.json?'+$.uuid(),
+                url:data_url,
                 dataType:'json',
                 success:function(_data){
                     data = _data;

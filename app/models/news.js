@@ -92,10 +92,10 @@
         template: function(options){
             return $.extend({
                 $id: 'roe999',
-                title:jsPath.titled(3),
+                title:$.title(3),
                 date:new Date()+'',
                 calendar:new Date()+'',
-                description:jsPath.paragraphs(2, false),
+                description:$.paragraphs(2, false),
                 deleted:''
             }, options);
         }

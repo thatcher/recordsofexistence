@@ -1,0 +1,74 @@
+<form action='${ $.env("root")+"admin/save/events/"+this.$id }'
+      method='post'>
+  
+    <span class="date ss_sprite  ss_image_add">
+      edit event date | 
+    </span> <br/>
+    <input 
+        class='date' 
+        type='text'
+        name='date' 
+        value='${ this.date }'
+    />
+    <br/>
+    <span  class="ss_sprite  ss_delete">
+        <a href='${ $.env("root")+"admin/"+ (this.deleted.length?"restore":"remove")+"/events/"+this.$id }'>
+        | ${ (this.deleted.length?"restore":"remove") } event
+        </a>
+    </span>
+    <br/>
+    <span class="ss_sprite  ss_image_add">
+        edit artist image
+        <br/>
+        <input
+            id=    'image' 
+            type=  'text'
+            name=  'image' 
+            value= '${ this.image}'
+        />
+    </span>
+    <a href='#'>
+        <img 
+            src='${ $.env("data")+this.image }'
+            alt='${ this.title }'
+            width='60px'
+        />
+    </a>
+    <br/>
+    <span class="ss_sprite  ss_comment_edit">
+        edit event title
+        <br/>
+        <input
+            class= 'title' 
+            type=  'text'
+            name=  'title' 
+            value= '${ this.title }'
+        />
+    </span>
+    <span class="ss_sprite  ss_comment_edit">
+        edit event location
+        <br/>
+        <input
+            class= 'location' 
+            type=  'text'
+            name=  'location' 
+            value= '${ this.location }'
+        />
+    </span>
+    <span class="ss_sprite  ss_comment_edit">
+        edit event description
+        <br/>
+        <textarea
+            class= 'description' 
+            name=  'description'>
+            ${ this.description }
+        </textarea>
+    </span>
+    
+    <input
+        type=  'submit' 
+        value= 'save'
+        class= 'submit'
+    />
+    
+</form>

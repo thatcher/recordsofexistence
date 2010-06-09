@@ -1,0 +1,89 @@
+<html xml:lang="eng"  dir="ltr" xml:space="default">
+    <!-- 
+    /**
+     * @author thatcher
+     */ 
+     -->
+    <head 	profile="http://a9.com/-/spec/opensearch/1.1/">
+		{{ block title }}
+			<title>Records of Existence</title>
+		{{ /block }}
+        
+		{{ include $.env("templates")+"html/meta.tmpl" }}
+        {{ block meta_extra }}
+			<!-- /**
+				standard extension point for additional metadata 
+			*/ -->
+        {{/block}}
+        
+		{{ include $.env("templates")+"html/stylesheets.tmpl" }}
+        {{ block stylesheet_extra }}
+			<!-- /**
+				standard extension point for additional stylesheets 
+			*/ -->
+        {{ /block }}
+        
+		{{ include $.env("templates")+"html/links.tmpl" }}
+        {{ block link_extra }}
+			<!-- /**
+				standard extension point for additional links 
+			*/ -->
+        {{ /block }}
+        
+		{{ include $.env("templates")+"html/scripts.tmpl" }}
+		{{ block script_extra }}
+			<!-- /**
+				standard extension point for additional stylesheets 
+			*/ -->
+		{{ /block }}
+    </head>
+    <body>
+		<!--
+		/**
+		 * Header
+		 */
+		-->
+		<div id='header' class="container">
+        {{ include $.env("templates")+"html/header.tmpl" }}
+		</div>
+		
+		<!--
+		/**
+		 * Main Content
+		 */
+		-->
+        <div id='main' class="container">
+			{{ block main }}
+				<!-- /**
+				   main layout extension point
+				*/ -->
+			{{ /block }}
+		</div>
+			
+			
+		<!--
+		/**
+		 * Footer
+		 */
+		-->
+		<div 	id="footer" 
+				class="container">
+			<div class="column span-23 last">
+                {{ include $.env("templates")+"html/footer.tmpl" }}
+				{{ block global-footer_extra }}
+					<!-- /**
+						standard extension point for additional elements 
+					*/ -->
+				{{ /block }}
+			</div>
+		</div>
+		
+		<!--
+		/**
+		 * Analytics
+		 */
+		-->
+        {{ include $.env("templates")+"html/analytics.tmpl" }}
+    </body>
+</html>
+

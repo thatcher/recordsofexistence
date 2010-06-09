@@ -44,7 +44,7 @@
                 not:[null],
                 msg:'any valid string, but cannot be empty or null'
             },
-            date_deleted:{
+            deleted:{
                 pattern:/^[0-9]{1,32}$/,
                 msg:'timestamp when record was removed or null for an active record'
             }
@@ -58,7 +58,6 @@
             var _this = this;
             this.find({
                 async:false,
-                //select:'select * from `pressings`',
                 select:"new Query('pressings').addFilter('deleted', $EQUAL, '')",
                 success:function(results){
                     log.debug('loaded all %s releases', results.data.length );
@@ -79,7 +78,6 @@
             var _this = this;
             this.find({
                 async:false,
-                //select:"select * from `pressings` where `release` = '"+id+"'",
                 select:"new Query('pressings').addFilter('release', $EQUAL, '"+id+"')",
                 success:function(results){
                     log.debug('loaded pressings for release %s', id );
@@ -93,15 +91,56 @@
             });
         },
         
+        currentForRelease:function(id,callback){
+            var _this = this;
+            this.find({
+                async:false,
+                select:"new Query('pressings').addFilter('release', $EQUAL, '"+id+"').addFilter('deleted', $EQUAL, '')",
+                success:function(results){
+                    log.debug('loaded pressings for release %s', id );
+                    callback(results.data);
+                },
+                error: function(e){
+                    log.error('failed to load all pressings for release %s.').
+                        exception(e);
+                    callback([_this.template()]);
+                }
+            });
+        },
+        
+        changeReleaseId: function(oldID, newID){
+            var _this = this;
+            this.forRelease(oldID, function(releases){
+                if(releases)
+                    log.debug('found %s pressing to change release id', releases.length);
+                $(releases).each(function(){
+                    var pressingId = this.$id;
+                    this.release = newID;
+                    _this.save({
+                        id: this.$id,
+                        async: false,
+                        data: this,
+                        success: function(){
+                            log.info('successfully changed release id for pressing %s',pressingId);
+                        },
+                        error: function(xhr, status, e){
+                            log.error('failed to changed release id for pressing %s',pressingId)
+                               .exception(e);
+                        }
+                    })
+                });
+            });
+        },
+        
         template: function(options){
             return $.extend({
                 $id:'404',
-                ska:'abc123',
                 release:'000',
                 price:0,
                 count: 'format',
                 format:'Audio CD',
-                description:jsPath.paragraphs(1,true)
+                deleted: '',
+                description:$.paragraphs(1,true)
             }, options);
         }
     });

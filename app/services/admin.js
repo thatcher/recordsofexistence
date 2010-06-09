@@ -1,3 +1,4 @@
+
 /**
  * @author thatcher
  */
@@ -29,6 +30,14 @@
             }else if($.isFunction(admin[action+'/'])){
                 admin[action+'/'](domain, id, event);
             }
+            if(event.response.headers.status == -1){
+                event.response.headers =  {
+                    status:   302,
+                    "Location": (id && action != 'remove')?
+                        '/'+domain.substring(0, domain.length-1) + '/'+ id + '?admin' :
+                        '/'+domain +'?admin' 
+                }
+            }
             
             log.debug(' %s / %s / %s : Completed.', action, domain, id);
         }
@@ -53,14 +62,40 @@
                     instance[parts[0]][parts[1]] = event.params('parameters')[prop];
                 }
             }
-            //TODO:
-            //instance = Model.serialize(instance); 
-                
             instance.deleted = '';
+            //May have to update child relationships if they changed the 
+            //instances id
+            if(domain == 'releases' && id != instance.$id){
+                log.debug('changing release id for pressing %s to %s', id, instance.$id);
+                $.$('#pressingsModel').changeReleaseId(id, instance.$id);
+                Model.remove({
+                    id: id,
+                    async: false,
+                    success: function(){
+                        log.info('removed old release %s', id);
+                    },
+                    error: function(){
+                        log.info('failed to remove old release %s', id);
+                    }
+                });
+            }else if(domain == 'artists' && id != instance.$id){
+                log.debug('changing artist id for release %s to %s', id, instance.$id);
+                $.$('#releasesModel').changeArtistId(id, instance.$id);
+                Model.remove({
+                    id: id,
+                    async: false,
+                    success: function(){
+                        log.info('removed old artist %s', id);
+                    },
+                    error: function(){
+                        log.info('failed to remove old artist %s', id);
+                    }
+                });
+            }
             
             Model.save({
                 async:  false,
-                id:     id,
+                id:     instance.$id,
                 data:   instance,
                 success: function(result){
                     log.info('Saved %s/%s', domain, id);
@@ -201,7 +236,7 @@
                 status:   302,
                 "Location": $.env('root')+'release/'+instance.release+"?admin"
             };
-            return;
+            
         },
         'add/pressings/' : function(id, event){
             //check to see if this event defined an association
@@ -255,8 +290,66 @@
             //with a release
             var release = event.params('parameters').release;
             if(release){
-
+                $.$('#pressingsModel').get({
+                    id: id,
+                    async:false,
+                    success: function(results){
+                        var pressing = results.data[0];
+                        pressing.deleted = new Date().getTime();
+                        $.$('#pressingsModel').save({
+                            id:id,
+                            data:pressing,
+                            async:false,
+                            success: function(){
+                                log.info('successfully removed pressing for release %s', release);
+                            },
+                            error: function(){
+                                log.warn('failed to remove pressing for release %s', release);
+                            }
+                        });
+                    },
+                    error: function(){
+                        log.warn('no such pressing for release %s', release);
+                    }
+                });
             }
+            event.response.headers =  {
+                status:   302,
+                "Location": $.env('root')+'release/'+release+"?admin"
+            };
+        },
+        'restore/pressings/' : function(id, event){
+            //check to see if this event defined an association
+            //with a release
+            var release = event.params('parameters').release;
+            if(release){
+                $.$('#pressingsModel').get({
+                    id: id,
+                    async:false,
+                    success: function(results){
+                        var pressing = results.data[0];
+                        pressing.deleted = '';
+                        $.$('#pressingsModel').save({
+                            id:id,
+                            data:pressing,
+                            async:false,
+                            success: function(){
+                                log.info('successfully restored pressing for release %s', release);
+                            },
+                            error: function(){
+                                log.warn('failed to restore pressing for release %s', release);
+                            }
+                        });
+                    },
+                    error: function(){
+                        log.warn('no such pressing for release %s', release);
+                    }
+                });
+            }
+            event.response.headers =  {
+                status:   302,
+                "Location": $.env('root')+'release/'+release+"?admin"
+            };
         },
         'add/tracks/' : function(id, event){
             //check to see if this event defined an association
@@ -269,7 +362,7 @@
                     async:false,
                     success: function(results){
                         instance = results.data[0];
-                        instance.tracks.push('XX.'+jsPath.titled(3));
+                        instance.tracks.push('XX.'+$.title(3));
                         log.info('Added template track ');
                         $.$('#releasesModel').save({
                             id:release,
@@ -301,7 +394,7 @@
             //with a release
             var release = event.params('parameters').release,
                 index     = event.params('parameters').index;
-            log.info('adding track to release %s', release);
+            log.info('removing track to release %s', release);
             if(release){
                 $.$('#releasesModel').get({
                     id: release,
@@ -309,16 +402,15 @@
                     success: function(results){
                         instance = results.data[0];
                         instance.tracks.splice(Number(index), 1);
-                        log.info('Added template track ');
                         $.$('#releasesModel').save({
                             id:release,
                             data:instance,
                             async:false,
                             success: function(){
-                                log.info('successfully saved track %s', release);
+                                log.info('successfully removed track %s', release);
                             },
                             error: function(){
-                                log.warn('failed to save track %s', release);
+                                log.warn('failed to remove track %s', release);
                             }
                         });
                         event.response.headers =  {
