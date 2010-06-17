@@ -95,7 +95,11 @@
                 
                 // - Recent Releases -
                 // provides the last two releases to promote interest
+<<<<<<< HEAD:app/services/site.js
                 Releases.featured(function(results){
+=======
+                Releases.recent(function(results){
+>>>>>>> f3c8a15c0402bb9b33343fd638919d888856169d:app/services/site.js
                     recent = results;
                     
                     // - Recent Events -

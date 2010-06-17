@@ -114,7 +114,10 @@ p{
 }
 #global-nav  a{
     border-bottom:1px dotted #EEE;
+<<<<<<< HEAD:css/site.css
     font-size:1.3em;
+=======
+>>>>>>> f3c8a15c0402bb9b33343fd638919d888856169d:css/site.css
 }
 #global-nav  a.stbutton{
     border:none;
@@ -123,6 +126,10 @@ p{
     color: #999;
 }
 
+<<<<<<< HEAD:css/site.css
+=======
+
+>>>>>>> f3c8a15c0402bb9b33343fd638919d888856169d:css/site.css
 /*****************************/
 
 
@@ -157,12 +164,21 @@ p{
     border:none;
 }
 #welcome p{
+<<<<<<< HEAD:css/site.css
     color:#BFB38F;
     font-family:"Arial Rounded MT Bold";
     font-size:0.9em;
     margin:0.5em 1em 3em;
     text-align:center;
     text-transform:uppercase;
+=======
+    color:#888;
+    font-size:0.8em;
+    text-transform:uppercase;
+    margin:0.5em 1em 3em;
+    font-family:"Arial Rounded MT Bold";
+    text-align:center;
+>>>>>>> f3c8a15c0402bb9b33343fd638919d888856169d:css/site.css
 }
 #welcome p img{
     /*border:1px dashed #777;*/
@@ -238,6 +254,7 @@ p{
     display:inline;
 }
 #newreleases ul li img{
+<<<<<<< HEAD:css/site.css
     /*border:1px dotted #999;*/
     float: left;
     margin:5px 3px 0 3px;
@@ -246,6 +263,15 @@ p{
 #newreleases ul li img:hover{
     /*border:1px dashed #EEE;*/
    background-color:#abc;
+=======
+    border:1px dotted #999;
+    float: left;
+    margin:1em;
+    padding:0.5em;
+}
+#newreleases ul li img:hover{
+    border:1px dashed #EEE;
+>>>>>>> f3c8a15c0402bb9b33343fd638919d888856169d:css/site.css
 }
 
 
@@ -266,9 +292,12 @@ p{
 #upcomingevents p {
     margin:0;
     text-align:center;
+<<<<<<< HEAD:css/site.css
 }
 #upcomingevents a {
     border:none;
+=======
+>>>>>>> f3c8a15c0402bb9b33343fd638919d888856169d:css/site.css
 }
 #upcomingevents ul {
     list-style:none;
@@ -280,6 +309,7 @@ p{
     padding:1px;
 }
 #upcomingevents ul li img{
+<<<<<<< HEAD:css/site.css
     /*border:1px dotted #999;*/
     padding:3px;
 }
@@ -287,6 +317,13 @@ p{
    border:1px dashed #EEE;
    /*background-color:#678;*/
   padding:0;
+=======
+    border:1px dotted #999;
+    padding:1em;
+}
+#upcomingevents ul li img:hover{
+    border:1px dashed #EEE;
+>>>>>>> f3c8a15c0402bb9b33343fd638919d888856169d:css/site.css
 }
 #upcomingevents ul li h6{
     margin-bottom:5px;
@@ -436,6 +473,10 @@ p{
     text-align: left;
 }
 #artists ul li img{
+<<<<<<< HEAD:css/site.css
+=======
+    border:1px dotted #999;
+>>>>>>> f3c8a15c0402bb9b33343fd638919d888856169d:css/site.css
     padding:1em;
     margin:0.5em 0.5em 0 0.5em;
 }
@@ -595,10 +636,17 @@ p{
 #news div{
    margin:1em 0 0 1em;
     padding:0 4em;
+<<<<<<< HEAD:css/site.css
 }
 #news p{
    margin:0 12em;   
 }
+=======
+}
+#news p{
+   margin:0 12em;   
+}
+>>>>>>> f3c8a15c0402bb9b33343fd638919d888856169d:css/site.css
 
 #news img{
     margin:2em;

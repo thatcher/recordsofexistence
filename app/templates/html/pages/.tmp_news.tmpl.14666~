@@ -1,0 +1,45 @@
+{{ extend $.env("templates")+"html/base.tmpl" }}
+
+{{ block title }}
+<title>Records of Existence News</title>
+{{ /block }}
+
+{{ block main }}
+<div id='news' >
+    <h3>news archives</h3>
+    
+    {{ if admin }}
+    <div style='clear:both;text-align:center;'>
+        <span  class="ss_sprite  ss_add">
+            <a href='${ $.env("root")+"admin/add/news/" }'>
+            Add news
+            </a>
+        </span><br/>
+        <a id='show_deleted'
+           href='#show/deleted'>
+           show deleted news
+        </a>
+        <span> | </span>
+        <a id='hide_deleted'
+           href='#hide/deleted'>
+           hide deleted news
+        </a>
+    </div>
+    {{ /if }} 
+
+    {{ each news }}
+    <div class='${ (this.deleted.length?"deleted":"") }'>
+    {{ if admin }}
+        {{ include $.env("templates")+"html/forms/news.html" }}
+    {{ else }}
+        <h4>${ this.title }</h4> 
+        <p>
+            <strong>${ this.date }</strong> 
+            <br/>
+            <span>${ this.description }</span>
+        </p>
+    {{ /if }}
+    </div>
+    {{ /each }}
+</div>
+{{ /block }}

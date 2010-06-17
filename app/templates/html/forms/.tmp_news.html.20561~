@@ -1,0 +1,49 @@
+<form action='${ "admin/save/news/" + this.$id }'
+      method='post'>
+            
+    <span class=  "title ss_sprite  ss_image_add">
+        edit news title | 
+        <span class= "ss_sprite  ss_delete">
+            <a href='${ $.env("root")+"admin/"+(this.deleted.length?"restore":"remove")+"/news/"+this.$id }'>
+                 ${ (this.deleted.length?"restore":"remove") } news 
+            </a>
+        </span>
+        <br/>
+        <input
+            class= 'title' 
+            type=  'text'
+            name=  'title'
+            value= '${ this.title }'
+        />
+    </span>
+    <br/>
+    <span class="date ss_sprite  ss_comment_add"
+        >edit news date | 
+        <br/>
+        <input
+            class= 'date' 
+            type=  'text'
+            name=  'date' 
+            value= '${ this.date }'
+        />
+    </span>
+    <p>
+        <span class="ss_sprite  ss_comment_add">
+            edit news description
+            <textarea
+                class='description'
+                name='description'
+                style='border-bottom:1px dotted #567'>
+                ${ this.description }
+            </textarea>
+        </span>
+    </p>
+                    
+    <input
+        id=    '${ "submit/news/"+this.$id }'
+        type=  'submit', 
+        value= 'save', 
+        class= 'submit'
+    />
+    <hr/>
+</form>

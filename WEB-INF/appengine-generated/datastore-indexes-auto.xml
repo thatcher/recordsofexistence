@@ -1,4 +1,8 @@
+<<<<<<< HEAD:WEB-INF/appengine-generated/datastore-indexes-auto.xml
 <!-- Indices written at Thu, 10 Jun 2010 02:14:05 UTC -->
+=======
+<!-- Indices written at Wed, 9 Jun 2010 13:01:56 UTC -->
+>>>>>>> f3c8a15c0402bb9b33343fd638919d888856169d:WEB-INF/appengine-generated/datastore-indexes-auto.xml
 
 <datastore-indexes/>
 

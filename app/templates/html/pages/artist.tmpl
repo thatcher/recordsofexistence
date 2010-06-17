@@ -14,7 +14,11 @@
     {{ if admin }}
         {{ include $.env("templates")+"html/forms/artist.tmpl?"+(new Date().getTime()) }}
     {{ else }}
+<<<<<<< HEAD:app/templates/html/pages/artist.tmpl
     <div class='first column span-7 push-2 colborder'>
+=======
+    <div class='first column span-7 prepend-2 colborder'>
+>>>>>>> f3c8a15c0402bb9b33343fd638919d888856169d:app/templates/html/pages/artist.tmpl
         
         <h4>
             ${ artist.name }

@@ -4,14 +4,6 @@
 <div class="span-17 column first">
     <div id='welcome'>
         <h3>welcome</h3>
-<<<<<<< HEAD:app/templates/html/pages/home.tmpl
-        <div class='span-4 push-2 column first colborder'>
-            <img src='${ $.env("root")+"images/goldrecord.png" }' 
-                 alt='records of existence'
-                 style='float:right;'/>
-        </div>
-        <div class='span-9 column last'>
-=======
         <div class='span-3 column first colborder'>
             <img src='${ $.env("root")+"images/goldrecord.png" }' 
                  alt='records of existence'
@@ -19,7 +11,6 @@
                  style='float:right;'/>
         </div>
         <div class='span-12 column last'>
->>>>>>> f3c8a15c0402bb9b33343fd638919d888856169d:app/templates/html/pages/home.tmpl
             <p>
                  Records of Existence is an artist run label of 
                  underground independent artists.  We specialize 
@@ -49,16 +40,9 @@
             {{ each recent }}
             <li>
                 <a href='${ $.env("root")+"release/"+this.$id }'>
-<<<<<<< HEAD:app/templates/html/pages/home.tmpl
-                    <span class='small'>${ this.name }</span>
-                    <img src='${ $.env("data")+this.image }'
-                         alt='${ this.name }'
-                         height='80px'
-=======
                     <img src='${ $.env("data")+this.image }'
                          alt='${ this.name }'
                          height='70px'
->>>>>>> f3c8a15c0402bb9b33343fd638919d888856169d:app/templates/html/pages/home.tmpl
                     />
                 </a>
                 <p>${ this.description.substring(0,128)+"..." }</p>
@@ -68,29 +52,19 @@
          </ul>
     </div>
     <div id='upcomingevents'>
-        <h3>upcoming <a href='${ $.env("root")+"events" }'>events</a></h3>
+        <h3>upcoming events</h3>
         <p><em>click on an event for more information</em></p>
         <ul>
             {{ each events }}
             <li>
-<<<<<<< HEAD:app/templates/html/pages/home.tmpl
-                <h6 style='color:white;'>${ this.date }</h6>
-=======
                 <h6>${ this.date }</h6>
->>>>>>> f3c8a15c0402bb9b33343fd638919d888856169d:app/templates/html/pages/home.tmpl
                 <a href='${ $.env("root")+"events" }'>
                     <img
                         src='${ $.env("data") + this.image }'
                         alt='${ this.title + "  "+this.location }'
                         title='${ this.title+"  "+this.location }'
-<<<<<<< HEAD:app/templates/html/pages/home.tmpl
-                        height='30px'
-                    />
-                    <span class='small'>${ this.title }</span>
-=======
                         height='60px'
                     />
->>>>>>> f3c8a15c0402bb9b33343fd638919d888856169d:app/templates/html/pages/home.tmpl
                 </a>
             </li>
             {{ /each }}

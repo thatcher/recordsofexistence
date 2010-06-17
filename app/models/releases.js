@@ -47,9 +47,12 @@
             deleted:{
                 pattern:/^[0-9]{1,32}$/,
                 msg:'timestamp when record was removed or null for an active record'
+<<<<<<< HEAD:app/models/releases.js
             },
             featured:{
                 msg:'display on front page?'
+=======
+>>>>>>> f3c8a15c0402bb9b33343fd638919d888856169d:app/models/releases.js
             }
         }));
         log = $.logger('RecordsOfExistence.Models.Releases');
@@ -94,6 +97,7 @@
                 }
             });
         },
+<<<<<<< HEAD:app/models/releases.js
         featured: function(callback){
             var _this = this;
             this.find({
@@ -111,6 +115,29 @@
                     }
                     callback(releases);
                 }
+=======
+        recent: function(callback){
+            this.current(function(results){
+                var i, recent = [];
+                // basically a stupid sort algorithm, results should be cache to 
+                // avoid computation overhead of resorting per-request
+                if(results.length > 2){
+                    recent = [results[0], results[1]];
+                    // find the recent releases based on roe release id
+                    if(Number(recent[0].id) < Number(recent[1].id)){
+                        //make sure we order largest to smallest numerically
+                        recent = [results[1], results[0]];
+                    } 
+                    for(i=2;i<results.length;i++){
+                        if(Number(results[i].id) > Number(recent[0].id)){
+                            recent = [results[i], recent[0]];
+                        }else if(Number(results[i].id) > Number(recent[1].id)){
+                            recent = [recent[0], results[i]];
+                        }
+                    }
+                }
+                callback(recent);
+>>>>>>> f3c8a15c0402bb9b33343fd638919d888856169d:app/models/releases.js
             });
         },
         forArtist:function(id, callback){
