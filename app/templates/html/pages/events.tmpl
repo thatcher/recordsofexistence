@@ -1,0 +1,61 @@
+{{ extend $.env("templates")+"html/base.tmpl" }}
+
+{{ block title }}
+<title>Records of Existence Events</title>
+{{ /block }}
+
+{{ block main }}
+<div id='events' >
+    <h3>events</h3>
+    
+    {{ if admin }}
+    <div style='clear:both;text-align:center;'>
+        <span  class="ss_sprite  ss_add">
+            <a href='${ $.env("root")+"admin/add/events/" }'>
+            Add event
+            </a>
+        </span><br/>
+        <a id='show_deleted'
+           href='#show/deleted'>
+           show deleted events
+        </a>
+        <span> | </span>
+        <a id='hide_deleted'
+           href='#hide/deleted'>
+           hide deleted events
+        </a>
+    </div>
+    {{ /if }} 
+    
+    <div style='width:auto;overflow-x:auto;'>
+        {{ each events }}
+        
+        <div class='event column span-5 ${admin?"":"colborder"} ${ (this.deleted.length?"deleted":"") }'>
+        {{ if admin }}
+            {{ include $.env("templates")+"html/forms/event.tmpl?"+new Date().getTime() }}
+        {{ else }}
+            <span>${ this.date }</span>
+            <br/>
+                <img 
+                    src='${ $.env("data")+this.image }'
+                    alt='${ this.title }'
+                    width='60px'
+                />
+            <br/>
+            <strong>${ this.title }</strong>
+            <p>${ this.location }</p>
+            <p>${ this.description }</p>
+        {{ /if }}        
+         </div>
+        
+        {{ if ($i+1)%4 == 0 }}
+        <div style='margin-top:8em;clear:both;'>
+        <br/>
+        </div>
+        {{ /if }}
+        
+        {{ /each }}
+    </div>      
+    
+</div>
+{{ /block }}

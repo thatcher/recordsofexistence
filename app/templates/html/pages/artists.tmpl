@@ -1,0 +1,93 @@
+{{ extend $.env("templates")+"html/base.tmpl" }}
+
+{{ block title }}
+<title>Records of Existence Artists</title>
+{{ /block }}
+
+{{ block main }}
+<div id='artists'>
+    <h3>artists</h3>
+    
+    {{ if admin }}
+    <div style='clear:both;text-align:center;'>
+        <span  class="ss_sprite  ss_add">
+            <a href='${ $.env("root")+"admin/add/artists/" }'>
+            Add artist
+            </a>
+        </span><br/>
+        <a id='show_deleted'
+           href='#show/deleted'>
+           show deleted artists
+        </a>
+        <span> | </span>
+        <a id='hide_deleted'
+           href='#hide/deleted'>
+           hide deleted artists
+        </a>
+    </div>
+    {{ /if }} 
+    
+    <div class='first column span-11  '>
+        <ul>
+            {{ each _(artists).even() }}
+            <li class='${ (this.deleted.length?"deleted":"") }'>
+                {{ if admin }}
+                <span class="ss_sprite  ss_comment_edit">
+                    <a href='${ $.env("root")+"artist/"+this.$id+"?admin" }'>
+                     | edit artist 
+                    </a><br/>
+                </span>
+                <span class="ss_sprite  ss_comment_delete">
+                    <a href='${  $.env("root")+"admin/"+ (this.deleted.length?"restore":"remove")+"/artists/"+this.$id }'>
+                        | ${ this.deleted.length?"restore":"remove" } artist 
+                    </a><br/>
+                </span>
+                <span class="ss_sprite  ss_cd_add">
+                    <a href='${ $.env("root")+"admin/add/releases/?artist="+this.$id }'>
+                         | add release 
+                    </a><br/>
+                </span>
+                {{ /if }}
+                <a href='${ $.env("root")+"artist/"+this.$id }'>
+                    <strong>${ this.name }</strong>
+                    <img src='${ $.env("data")+this.image }'
+                         alt='${ this.name }'
+                         height='80px'/>
+                </a>
+            </li>
+            {{ /each }}
+        </ul>
+    </div>
+    <div class=' last column span-10'>
+        <ul>
+            {{ each _(artists).odd() }}
+            <li class='${ (this.deleted.length?"deleted":"") }'>
+                {{ if admin }}
+                <span class="ss_sprite  ss_comment_edit">
+                    <a href='${ $.env("root")+"artist/"+this.$id+"?admin" }'>
+                     | edit artist 
+                    </a><br/>
+                </span>
+                <span class="ss_sprite  ss_comment_delete">
+                    <a href='${  $.env("root")+"admin/"+ (this.deleted.length?"restore":"remove")+"/artists/"+this.$id }'>
+                        | ${ this.deleted.length?"restore":"remove" } artist 
+                    </a><br/>
+                </span>
+                <span class="ss_sprite  ss_cd_add">
+                    <a href='${ $.env("root")+"admin/add/releases/?artist="+this.$id }'>
+                         | add release 
+                    </a><br/>
+                </span>
+                {{ /if }}
+                <a href='${ $.env("root") }artist/${ this.$id }'>
+                    <img src='${ $.env("data")+this.image }'
+                         alt='${ this.name }'
+                         height='80px'/>
+                    <strong>${ this.name }</strong>
+                </a>
+            </li>
+            {{ /each }}
+        </ul>
+    </div>
+</div>
+{{ /block }}

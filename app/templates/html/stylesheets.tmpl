@@ -1,0 +1,57 @@
+<!--
+/**
+ * @author thatcher
+ */
+-->
+<!--
+/**
+ * Print Stylesheets
+ */
+-->
+<link 	href='${ $.env("root")+"css/blueprint/print.css" }' 
+		rel="stylesheet"         
+		type="text/css" 
+		media="print"/>
+
+<!--
+/**
+ * Screen Stylesheets
+ */
+-->		
+<link 	href='${ $.env("root")+"css/blueprint/screen.css" }'   
+		type="text/css" 
+		media="screen, projection"
+		rel="stylesheet" />
+<link   href='${ $.env("root")+"css/sprite.css" }'   
+        type="text/css" 
+        media="screen, projection"
+        rel="stylesheet" />
+<link   href='${ $.env("root")+"css/site.css" }' 
+        type="text/css" 
+        rel="stylesheet" />
+
+
+<!-- 
+/**
+ *  extra stylesheet for admin mode 
+ */
+-->
+{{ if admin }}
+<link
+    href='${ $.env("root")+"css/site-admin.css" }' 
+    type="text/css"
+    rel="stylesheet"
+/>
+{{ /if }}
+
+<!--
+/**
+ * Quirks Mode Stylesheets
+ */
+-->				
+<!--[if lt IE 8]>
+<link 	href="/css/blueprint/ie.css"
+		type="text/css" 
+		media="screen, projection"
+		rel="stylesheet" />
+ <![endif]-->

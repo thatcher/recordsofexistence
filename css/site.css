@@ -1,5 +1,5 @@
 body {
-    border: 1px #ffffff;
+    border: 1px #EEEEEE;
     padding: 0;
     background-color: #1a1a1a;
     margin-top:1em;
@@ -9,8 +9,26 @@ body {
     color:#AAA;
     /*background-image:url(../images/outterspacesymbols_backgrou.jpg);*/
 }
-body strong{
+body #main div input, body #main div textarea{
+    border: 2px dotted #567;
+    /*padding:6px;*/
+    /*width:100%;*/
+    margin:10px 0;
+    background-color:#000;
     color:#EEE;
+}
+body #main div input.addtocart{
+    border:medium none;
+    margin:auto 30px;
+    padding:6px;
+    width:80px;
+}
+
+body #main div input.submit{
+    border: 2px dotted #765;
+    width:128px;
+}
+body strong{
     text-transform:uppercase;
 }
 body span{
@@ -19,9 +37,16 @@ body span{
 body div{
     background-color:#000;
 }
+.stclose{
+    background-color:transparent;
+}
 body a{
-    color:#EEE;
-    text-decoration:none;
+    color:#678;
+    border-bottom:1px dashed #777777;
+    text-decoration: none;
+}
+body img a{
+    color:#678;
 }
 body div.colborder{
     border-right-color:#999;
@@ -29,18 +54,23 @@ body div.colborder{
 body form input{
    margin:1em;
 }
-h1, h2, h3, h4, h5, h6 {
-    color:#EEEEEE;
+h1, h2, h3, h4, h5, h6, strong, span.small {
+    color:#678;
     font-weight:normal;
+    
 }
 h1, h2, h3{
     margin:0 0 1em 1em;
-    border-top:1px dotted #999999;
+    color:#678;
+    /*border-top:1px dotted #999999;*/
 }
+a:hover{
+   color:#EEE;
+}
+
 p{
     color:#DDD;
 }
-
 
 
 
@@ -65,13 +95,7 @@ p{
 }
 
 
-
-
-
 /*****************************/
-
-
-
 
 
 #global-nav {
@@ -89,20 +113,17 @@ p{
     display:inline;
 }
 #global-nav  a{
-    color: #FFF;
+    border-bottom:1px dotted #EEE;
+    font-size:1.3em;
+}
+#global-nav  a.stbutton{
+    border:none;
 }
 #global-nav  a:hover{
     color: #999;
 }
 
-
-
-
-
 /*****************************/
-
-
-
 
 
 #main{
@@ -112,21 +133,20 @@ p{
 #main h3{
     background-color:#000;
     padding:4px;
-    color:white;
 }
 #main p {
-    margin:1em;
-    padding:1em;
+    /*margin:1em;*/
+    padding:0 1em;
 }
-
-
-
+#main .deleted{
+    border-top:1px dotted #993333;
+    border-bottom:1px dotted #993333;
+    background-color:#1a1010;
+    padding:3px;
+}
 
 
 /*****************************/
-
-
-
 
 
 #welcome {
@@ -137,13 +157,12 @@ p{
     border:none;
 }
 #welcome p{
-    border:1px dashed #999;
-    color:#DDD;
-    font-size:0.8em;
-    text-transform:uppercase;
-    margin:0.5em 14em 3em;
+    color:#BFB38F;
     font-family:"Arial Rounded MT Bold";
-    
+    font-size:0.9em;
+    margin:0.5em 1em 3em;
+    text-align:center;
+    text-transform:uppercase;
 }
 #welcome p img{
     /*border:1px dashed #777;*/
@@ -165,6 +184,7 @@ p{
     margin:1em;
     border:1px dotted #888;
     margin-top:0;
+    clear:both;
 }
 #recentnews{
     border:none;
@@ -182,13 +202,9 @@ p{
     text-align:right;
     margin-right:2em;
     margin-left:6em;
-    border-bottom:1px dashed #999;
 }
 
 #recentnews h3 a{
-   color:#FFF;
-   text-decoration:none;
-   border:none;
    float:none;
    margin:0;
 }
@@ -198,17 +214,10 @@ p{
    float:none;
 }
 #recentnews a{
-   color:#CCC;
-   text-decoration:none;
    border-bottom:1px dashed #777;
    margin:1em;
    float:right;
 }
-#recentnews a:hover{
-   color:#FFF;
-   border-bottom:1px dashed #FFF;
-}
-
 
 
 /*****************************/
@@ -219,28 +228,24 @@ p{
 
 #newreleases{
     margin:1em;
-    border:1px dotted #888;
 }
 #newreleases h3{
-   margin:1em 0 0 1em;
+   margin:0 1em;
    border:none;
-}
-#newreleases h3 a{
-   color:#FFF;
-   text-decoration:none;
 }
 #newreleases ul {
     list-style:none;
     display:inline;
 }
 #newreleases ul li img{
-    border:1px dashed #999;
-    float:right;
-    margin:1em;
-    padding:0.5em;
+    /*border:1px dotted #999;*/
+    float: left;
+    margin:5px 3px 0 3px;
+    padding:2px 8px;
 }
 #newreleases ul li img:hover{
-    border:1px dashed #FFF;
+    /*border:1px dashed #EEE;*/
+   background-color:#abc;
 }
 
 
@@ -254,14 +259,16 @@ p{
  * */
 #upcomingevents{
     margin:1em;
-    border:1px dotted #888;
 }
 #upcomingevents h3{
     border:none;
 }
 #upcomingevents p {
     margin:0;
-    padding:1em;
+    text-align:center;
+}
+#upcomingevents a {
+    border:none;
 }
 #upcomingevents ul {
     list-style:none;
@@ -270,13 +277,16 @@ p{
 #upcomingevents ul li {
     margin:1em;
     text-align:center;
+    padding:1px;
 }
 #upcomingevents ul li img{
-    border:1px dashed #999;
-    padding:1em;
+    /*border:1px dotted #999;*/
+    padding:3px;
 }
-#upcomingevents ul li img:hover{
-    border:1px dashed #FFF;
+#upcomingevents ul li:hover{
+   border:1px dashed #EEE;
+   /*background-color:#678;*/
+  padding:0;
 }
 #upcomingevents ul li h6{
     margin-bottom:5px;
@@ -297,9 +307,6 @@ p{
 #releases div{
    margin:1em 0 0 1em;
 }
-#releases span{
-    color:#DDD;
-}
 #releases p {
     margin:1em;
     padding:1em;
@@ -308,25 +315,23 @@ p{
     list-style:none;
     display:inline;
 }
-#releases ul li {
-    margin:1em;
-}
 #releases ul li img{
-    border:  1px dotted #777;
-    padding:1em;
+    /*border:  1px dotted #777;*/
+    padding:10px;
     margin:1em;
 }
 #releases ul li img:hover{
-    border:1px dashed #444;
-    padding:1em;
-    margin:1em;
+    border:5px dotted #444;
+    padding:5px;
 }
 #releases ul li h6{
     text-align:right;
     margin-top:-35px;
 }
 
-
+#releases .small{
+    margin: 0 25px;
+}
 
 
 /****************************
@@ -342,7 +347,7 @@ p{
     padding:1em;
 }
 #release div img{
-    border:  1px dotted #777;
+    /*border:  1px dotted #777;*/
     padding:1em;
     margin:1em;
 }
@@ -356,12 +361,11 @@ p{
     text-decoration:none;
 }
 #release div ul li a:hover{
-    color:#FFF;
+    color:#EEE;
 }
 
 #release div.box{
     background-color:#000;
-    border: 1px dashed #777;
     padding:0.5em;
     float:left;
 }
@@ -374,11 +378,10 @@ p{
     padding:0.1em;
 }
 #release a{
-    border-bottom:1px dashed #999999;
     text-decoration:none;
 }
 #release a:hover{
-    color:#FFF;
+    color:#EEE;
 }
 
 #release #media img{
@@ -387,7 +390,11 @@ p{
     padding:0;
 }
 #release #media ol{
+    list-style-type:none;
     margin-left:2em;
+}
+#release #media a{
+    border:none;
 }
 
 /****************************
@@ -400,7 +407,7 @@ p{
     /*border:1px dotted #888;*/ 
 }
 #artists h3{
-   border-top:1px dotted #888;
+
    margin:0 1em 1em 1em;
 }
 #artists div{
@@ -418,6 +425,10 @@ p{
     margin:1em;
     padding:1px;
 }
+#artists ul li:hover {
+    border: 1px dotted #999;
+    padding:0px;
+}
 #artists div.first ul li {
     text-align: right;
 }
@@ -425,17 +436,13 @@ p{
     text-align: left;
 }
 #artists ul li img{
-    border:2px dotted #999;
     padding:1em;
     margin:0.5em 0.5em 0 0.5em;
 }
 #artists ul li a{
     text-decoration:none;
 }
-#artists ul li:hover{
-    padding:0px;
-    border:1px dashed #666;
-}
+
 
 
 
@@ -448,15 +455,12 @@ p{
 #artist{
     margin:0 1em 1em 1em;
 }
-#artist div{
-   margin:1em 0 0 1em;
-}
 #artist p {
     margin:1em;
     padding:1em;
 }
 #artist div img{
-    border:  1px dotted #777;
+    /*border:  1px dotted #777;*/
     padding:1em;
     margin:1em;
 }
@@ -470,10 +474,10 @@ p{
     text-decoration:none;
 }
 #artist a{
-    border-bottom:1px dashed #fff;
+    border-bottom:1px dashed #EEE;
 }
 #artist a:hover{
-    color:#FFF;
+    color:#EEE;
 }
 
 
@@ -488,7 +492,6 @@ p{
     margin:0 1em 1em 1em;
 }
 #contact h3{
-   border-top:1px dotted #999999;
    margin:0 1em 1em 1em;
 }
 #contact div{
@@ -497,11 +500,10 @@ p{
 #contact p img{
     margin:1em;
     padding:1em;
-    border:1px dashed #777;
     float:right;
 }
 #contact  a{
-   color:#FFF;
+   color:#EEE;
    text-decoration:none;
 }
 
@@ -509,7 +511,6 @@ p{
 
 #mailing_list{
     margin:1em;
-    border:1px dotted #888;
     padding-bottom:1em;
 }
 #mailing_list h3{
@@ -534,10 +535,10 @@ p{
 #mailing_list  a{
    color:#AAA;
    text-decoration:none;
-   border-bottom:1px dashed #FFF;
+   border-bottom:1px dashed #EEE;
 }
 #mailing_list  a:hover{
-   color:#FFF;
+   color:#EEE;
 }
 
 
@@ -549,20 +550,15 @@ p{
 #events{
     margin:0 1em 0 1em;
 }
-#events h3{
-   border-top:1px dotted #999999;
-   margin:0 1em 1em 1em;
-}
 #events div{
    margin:1em 0 0 1em;
 }
 #events img{
     margin-top:1em;
     padding:1em;
-    border:1px dashed #777;
 }
 #events  a{
-   color:#FFF;
+   color:#EEE;
    text-decoration:none;
 }
 #events  hr{
@@ -571,7 +567,8 @@ p{
    margin-bottom:-4em;
 }
 #events div.event{
-    background:transparent none repeat scroll 0 0;
+    /*background:transparent none repeat scroll 0 0;*/
+    text-align:center;
 }
 #events div.event p{
    margin:0.3em;
@@ -588,27 +585,28 @@ p{
 #news{
     margin:0 1em 0 1em;
 }
-#news h3{
-   border-top:1px dotted #999999;
-   margin:0 1em 1em 1em;
-}
 #news h4{
    margin:1em 1em 1em 1em;
+    padding:0 4em;
 }
 #news strong{
-   margin:1em 1em 1em 1em;
+    float:right;
 }
 #news div{
    margin:1em 0 0 1em;
-   border:1px dotted #999;
+    padding:0 4em;
 }
+#news p{
+   margin:0 12em;   
+}
+
 #news img{
     margin:2em;
     padding:1em;
     border:1px dashed #777;
 }
 #news  a{
-   color:#FFF;
+   color:#EEE;
    text-decoration:none;
 }
 /****************************
@@ -668,14 +666,14 @@ p{
    margin:0;
 }
 #sharethisbutton a{
-    color:#FFF;
+    color:#EEE;
     
 }
 
 
 /****************************
  * 
- * #sharethisbutton
+ * #copyright
  * 
  * */
 #copyright {
@@ -687,3 +685,4 @@ p{
     padding:0;
 }
 /*****************************/
+

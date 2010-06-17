@@ -1,0 +1,81 @@
+{{ extend $.env("templates")+"html/base.tmpl" }}
+
+{{ block title }}
+<title>Records of Existence Release ${ release.name }</title>
+{{ /block }}
+
+{{ block main }}
+<div id='release'>
+
+    <h3><a href='${ $.env("root")+"releases" }'>&lt; releases</a></h3>
+    {{ if admin }}
+        {{ include $.env("templates")+"html/forms/release.tmpl?"+(new Date().getTime()) }}
+    {{ else }}
+    <div class='first column span-5 colborder'>
+        <br/><br/>
+        <h4>${ release.name }</h4>
+        <h5>
+            <a href='${ $.env("root")+"artist/"+artist.$id }'>
+                ${ artist.name }
+            </a>
+        </h5>
+        <em>Release</em><br/>
+        <span>${ release.label_id }</span> 
+        <br/><br/>
+    </div>
+     
+    <div id='cover' 
+         class='column span-6 colborder'>
+        <img src='${ $.env("data")+release.image }' 
+             alt='release image'  
+             height='150px'
+        />
+    </div>
+    <div id='media' 
+         class='column span-9'>
+        <ol class='clear'>
+            {{ each(i, title) release.tracks }}
+            <li>
+                <a target='_blank'
+                    href='${ $.env("data")+"releases/"+release.$id+"/web/mp3/"+title.substring(0,2)+".mp3"}'>
+                    ${ title }
+                    <img src='${ $.env("root")+"images/audio_bullet.gif" }'/>
+                </a>
+            </li>
+            {{ /each }}
+        </ol>
+    </div>
+    
+    <div class='column span-18 push-3' >
+        <p>${ release.description }</p>
+    </div>
+    {{ /if }}
+    
+    <div  class='column span-22'>
+        <h3> pressings </h3>
+        {{ if admin }}
+            {{ each pressings }}
+            {{ include $.env("templates")+"html/forms/pressing.tmpl?"+(new Date().getTime()) }}    
+            {{ /each }}
+            <div style='clear:both;text-align:center;'>
+                <span  class= "ss_sprite  ss_add" >
+                    <a href='${  $.env("root") }admin/add/pressings/?release=${ release.$id }'>
+                        Add a new pressing
+                    </a>
+                </span>
+            </div>
+        {{ else }}
+            {{ each pressings }}
+            <div class='pressing span-16'>
+                <div class='first column span-13 prepend-2 colborder'>
+                    <p>${ this.description }</p> 
+                </div>
+            </div>
+            <div class='last column small box span-4'>
+                {{ include $.env("templates")+"html/forms/paypal.tmpl?"+(new Date().getTime()) }}
+            </div>  
+            {{ /each }}
+        {{ /if }}
+    </div>
+</div>
+{{ /block }}

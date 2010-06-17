@@ -1,0 +1,122 @@
+h1. Records of Existence: a jQuery-Claypool Site Running on Google App Engine
+
+p. Is a website built with server side jquery-claypool and runs on google app engine.
+It is a great working example of some of the elegant features available from 
+jquery-claypools small, light weight frameworkf plugins.
+
+p. It is a real web site running at "recordsofexistence.com":http://recordsofexistence.com 
+so you can play with  the example urls below to see they really work.  We do ask that if you use
+this project to get started on your next apps engine project, please remove
+the references and logos to recordsofexistence.
+
+h2. Running
+
+p. If you would like to develop locally you can get the google apps engine development
+environment (is really just jetty with a mini bigtable backend built in.)  The 
+appengine dev is here:
+
+"Google AppEngine SDK":http://googleappengine.googlecode.com/files/appengine-java-sdk-1.3.1.zip
+
+All you need to do is unzip it (we'll assume unix-like paths) and run:
+
+@$> /path/to/appengine/bin/dev_appserver.sh /path/to/recordsofexistence/@
+
+At this point you should be able to open up a browser see
+
+"http://localhost:8080/":http://localhost:8080/
+
+h2. Managing the Database
+
+p. To build/rebuild the database you will want to be familiar with the following
+urls.  They will allow you to empty, load from json, and get a database dump
+as json. Try them in the browser in this order:
+
+* "http://localhost:8080/manage/reset":http://localhost:8080/manage/reset
+* "http://localhost:8080/manage/syncdb":http://localhost:8080/manage/syncdb
+* "http://localhost:8080/manage/dumpdata":http://localhost:8080/manage/dumpdata
+
+the last will ask you to save a file, this is noramlly saved as :
+
+@/path/to/recordsofexistence/data/__initial__.json@
+
+You'll also notice these urls are not available at www.recordsofexistence.com,
+or rather they are password protected.
+
+h2. The Site and its Features
+
+p. The site is a simple website, suitable for small merchants or home businesses.  
+Data is stored the Google's Big Table (though to the developer it is transparent
+and will still feel like ajax), and the data files (images etc are stored on s3).
+For local development we will store the images locally, and they could be served
+directly fro app engine as well.
+
+h2. JSON Views
+
+p. jQuery-Claypool on AppsEngine is not too much unlike CouchDB.  In Fact we add a
+simple Filter in app/config/filters.js to provide a simple json view of the data
+aggregated from the database for each page of the site.  To get json instead of 
+html just add ?fo=json to any url in the site! Here are some examples:
+
+* "http://localhost:8080/?fo=json":http://localhost:8080/?fo=json
+* "http://localhost:8080/artists?fo=json":http://localhost:8080/artists?fo=json
+* "http://localhost:8080/artist/roe001?fo=json":http://localhost:8080/artist/roe001?fo=json
+* "http://localhost:8080/release/roe001?fo=json":http://localhost:8080/release/roe001?fo=json
+
+or for the impatient
+
+* "http://recordsofexistence.com/?fo=json":http://recordsofexistence.com/?fo=json
+* "http://recordsofexistence.com/artists?fo=json":http://recordsofexistence.com/artists?fo=json
+* "http://recordsofexistence.com/artist/roe001?fo=json":http://recordsofexistence.com/artist/roe001?fo=json
+* "http://recordsofexistence.com/release/roe001?fo=json":http://recordsofexistence.com/release/roe001?fo=json
+
+For giggles you can also try fo=xml on all these urls
+
+h2. Rest Interfaces
+
+p. If you want to access the database directly, you can make use of the rest 
+interfaces.  Again these urls are password protected at www.recordsofexistence.com
+for obvious reasons but you can see them locally.  Here are just a few (and dont 
+forget this is just GET, we support POST, PUT, and DELETE as well)
+
+* "http://localhost:8080/rest/":http://localhost:8080/rest/
+* "http://localhost:8080/rest/artists/":http://localhost:8080/rest/artists/
+* "http://localhost:8080/rest/artists/roe001/":http://localhost:8080/rest/artists/roe001/
+
+h2. Admin Interface
+
+p. On any page you can add ?admin to access the admin interface (if available, most
+pages have an admin interface).  Locally you will be able to modify your database,
+but of course the back end urls are password protected at the live site:
+
+
+* "http://localhost:8080/artists?admin":http://localhost:8080/artists?admin=true
+* "http://localhost:8080/artist/roe001?admin":http://localhost:8080/artist/roe001?admin=true
+* "http://localhost:8080/release/roe001?admin":http://localhost:8080/release/roe001?admin=true
+* "http://localhost:8080/release/roe001?admin":http://localhost:8080/release/roe001?admin=true
+
+or for the impatient
+
+* "http://recordsofexistence.com/artists?admin":http://recordsofexistence.com/artists?admin=true
+* "http://recordsofexistence.com/artist/roe001?admin":http://recordsofexistence.com/artist/roe001?admin=true
+* "http://recordsofexistence.com/release/roe001?admin":http://recordsofexistence.com/release/roe001?admin=true
+* "http://recordsofexistence.com/release/roe001?admin":http://recordsofexistence.com/release/roe001?admin=true
+
+h2. Deploying
+
+p. When you are ready to deploy, it is basically as simple as toggling you environment in
+app/boot/server.js from
+
+@$.env('defaults', "dev.client");
+//$.env('defaults', "appengine.server");@
+   
+   to
+   
+@//$.env('defaults', "dev.client"); 
+$.env('defaults', "appengine.server");@ 
+       
+and finally
+
+@$> /path/to/appengine/bin/appcfg.sh update  /path/to/recordsofexistence/@
+
+(don't forget to make sure WEB-INF/appengine-web.xml points to your app id)
+

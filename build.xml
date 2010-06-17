@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="recordsofexistence" default="default" basedir=".">
+    <description>Builds, tests, and runs the project recordsofexistence.</description>
+    <tstamp/>
+    <!-- BASIC PROJECT PROPERTIES TO HELP TRACK VERSION -->
+    <property  file="build.properties"/>
+    
+    <property  name="JAVA_LIB_DIR" 
+			   location="WEB-INF/lib" 
+			   description="Java Jars" />
+    <property  name="RHINO_JAR" 
+			   location="${JAVA_LIB_DIR}/js.jar" 
+			   description="Rhino JS Engine" />
+    <property  name="JSLINT_JAR" 
+			   location="${JAVA_LIB_DIR}/jslint4java-1.1.jar" 
+			   description="JSLint Syntax Checker" />
+    <property  name="SERVLET_JAR" 
+			   location="../../lib/servlet-api.jar" 
+			   description="Javax Servlet API" />
+    <property  name="LOG4J_JAR" 
+			   location="${JAVA_LIB_DIR}/log4j-1.2.15.jar" 
+			   description="Log4j Logging API" />
+    <property  name="YUI_MIN_JAR" 
+			   location="${JAVA_LIB_DIR}/yuicompressor-2.4.1.jar" 
+			   description="YUI Compressor" />
+
+    <property  name="PREFIX"         
+	           location="${basedir}/"                  
+			   description="Target parent folder for built files"   />
+
+    <property  name="PLUGIN_DIR"        
+               location="${PREFIX}/plugins"                
+               description="Folder for useful plugins to develop apps" />
+
+	
+    
+    
+    <!-- Plugin File Names for Distribution -->
+    <property  name="VENDOR_BASE"       
+	           location="${basedir}/../" />
+    <property  name="JQUERY_E4X"         
+	           location="${VENDOR_BASE}/jquery-e4x-templates/jquery.e4x.js" />
+    <property  name="JQUERY_JSON"        
+	           location="${VENDOR_BASE}/jquery-json/jquery.json.js" />
+    <property  name="JQUERY_JSPATH"      
+	           location="${VENDOR_BASE}/jquery-jspath/jquery.jspath.js" />
+    <property  name="JQUERY_LOREMIPSUM"  
+	           location="${VENDOR_BASE}/jquery-loremipsum/jquery.loremipsum.js" />
+    <property  name="JQUERY_OBJTREE"     
+	           location="${VENDOR_BASE}/jquery-objtree/jquery.objtree.js" />
+    <property  name="JQUERY_SDB"         
+	           location="${VENDOR_BASE}/jquery-sdb/jquery.sdb.js" />
+    <property  name="JQUERY_SDB_REST"    
+	           location="${VENDOR_BASE}/jquery-sdb/jquery.sdb.rest.js" />
+    <property  name="JQUERY_XSLT"        
+	           location="${VENDOR_BASE}/jquery-xslt/jquery.xslt.js" />
+    
+	<!-- for server side -->
+    <property  name="CLAYPOOL_SERVER_JAR" 
+               location="${VENDOR_BASE}/rhino-for-webapps/dist/claypool.jar" 
+               description="Rhino For Webapps (Javascript Bridge)" />
+    <!-- 
+        Disabled until the latest envjs distribution 
+        is vetted against jquery.claypool.js
+        
+    <property  name="ENVJS_JAR" 
+               location="${VENDOR_BASE}/env-js/dist/env-js.jar" 
+               description="Rhino with jLine Console and Envjs Tools" />
+    <property  name="ENV_RHINO_JS" 
+               location="${VENDOR_BASE}/env-js/dist/env.rhino.js" 
+               description="Envjs for the Rhino Engine" />
+    -->	   
+    
+    <!-- BUILD TARGETS -->
+    <target name="default" 
+	        depends="vendor"/>
+    
+    <target name="all" 
+	        depends="default"/>
+    
+	<target name='vendor' 
+	        depends='plugins'/>
+	
+	<target name='plugins'>
+        <copy file='${JQUERY_E4X}'          todir='${PLUGIN_DIR}' /> 
+        <copy file='${JQUERY_JSON}'         todir='${PLUGIN_DIR}' /> 
+        <copy file='${JQUERY_JSPATH}'       todir='${PLUGIN_DIR}' /> 
+        <copy file='${JQUERY_LOREMIPSUM}'   todir='${PLUGIN_DIR}' /> 
+        <copy file='${JQUERY_OBJTREE}'      todir='${PLUGIN_DIR}' /> 
+        <copy file='${JQUERY_SDB}'          todir='${PLUGIN_DIR}' /> 
+        <copy file='${JQUERY_SDB_REST}'     todir='${PLUGIN_DIR}' /> 
+        <copy file='${JQUERY_XSLT}'         todir='${PLUGIN_DIR}' /> 
+    </target>
+	
+	
+    <target name='server-jar'>
+        <copy file='${CLAYPOOL_SERVER_JAR}' todir='${JAVA_LIB_DIR}' /> 
+        <copy file='${ENVJS_JAR}'           todir='${JAVA_LIB_DIR}' /> 
+        <copy file='${ENV_RHINO_JS}'        todir='${JAVA_LIB_DIR}' /> 
+    </target>
+    
+</project>
