@@ -27,11 +27,7 @@
     </div>
     {{ /if }} 
     
-<<<<<<< HEAD:app/templates/html/pages/artists.tmpl
     <div class='first column span-11  '>
-=======
-    <div class='first column span-11 colborder '>
->>>>>>> f3c8a15c0402bb9b33343fd638919d888856169d:app/templates/html/pages/artists.tmpl
         <ul>
             {{ each _(artists).even() }}
             <li class='${ (this.deleted.length?"deleted":"") }'>
@@ -56,21 +52,13 @@
                     <strong>${ this.name }</strong>
                     <img src='${ $.env("data")+this.image }'
                          alt='${ this.name }'
-<<<<<<< HEAD:app/templates/html/pages/artists.tmpl
                          height='80px'/>
-=======
-                         height='50px'/>
->>>>>>> f3c8a15c0402bb9b33343fd638919d888856169d:app/templates/html/pages/artists.tmpl
                 </a>
             </li>
             {{ /each }}
         </ul>
     </div>
-<<<<<<< HEAD:app/templates/html/pages/artists.tmpl
     <div class=' last column span-10'>
-=======
-    <div class=' last column  span-10'>
->>>>>>> f3c8a15c0402bb9b33343fd638919d888856169d:app/templates/html/pages/artists.tmpl
         <ul>
             {{ each _(artists).odd() }}
             <li class='${ (this.deleted.length?"deleted":"") }'>
@@ -94,11 +82,7 @@
                 <a href='${ $.env("root") }artist/${ this.$id }'>
                     <img src='${ $.env("data")+this.image }'
                          alt='${ this.name }'
-<<<<<<< HEAD:app/templates/html/pages/artists.tmpl
                          height='80px'/>
-=======
-                         height='50px'/>
->>>>>>> f3c8a15c0402bb9b33343fd638919d888856169d:app/templates/html/pages/artists.tmpl
                     <strong>${ this.name }</strong>
                 </a>
             </li>

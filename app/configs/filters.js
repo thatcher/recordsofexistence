@@ -18,7 +18,6 @@
             var params = event.params( 'parameters' );
             
             if('admin' in params){
-<<<<<<< HEAD:app/configs/filters.js
                 log.info('userPrincipals %s',event.request.userPrincipal);
                 if( !event.request.userPrincipal ){
                     event.response.headers =  {
@@ -27,13 +26,6 @@
                             UserServiceFactory.
                                 getUserService().
                                 createLoginURL(event.request.requestURI+'?admin')
-=======
-                log.info('Cookie %s', event.request.headers.Cookie);
-                if( !event.request.headers.Cookie || !event.request.headers.Cookie.match(/:true:/) ){
-                    event.response.headers =  {
-                        status:   302,
-                        "Location": '/_ah/login?continue='+event.request.requestURL + '?admin'
->>>>>>> f3c8a15c0402bb9b33343fd638919d888856169d:app/configs/filters.js
                     }
                 }else{
                     event.m({ admin: true });

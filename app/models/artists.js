@@ -44,7 +44,7 @@
                 async:false,
                 //select:'select * from `reo_artists` where `deleted` = "null"',
                 select:"new Query('artists')",
-                success:function(results){
+                success: function(results){
                     log.debug('loaded all %s artists', results.data.length );
                     callback(results.data);
                 },
