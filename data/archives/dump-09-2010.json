@@ -1,0 +1,363 @@
+{
+    "artists": [
+        {
+            "description": "Debut Ep now available for pre-order!",
+            "deleted": "",
+            "image": "artists/accordion/thumb.jpg",
+            "$id": "accordion",
+            "name": "Accordion"
+        },
+        {
+            "description": "Crushing poverty,rural isolation and a total        disconnection from the dumbed down,corporate state of mainstream America;        all key ingredients that fuel the backwoods psychedelic sludge that is        Hovel.Exploiting a stripped down, bare-knuckle sound that brow beats         listeners into cozy submission with backhand after bitch-slap of violent        tribal grooves overlayed with thick slabs of stoned-out riffs that leave         a harsh, ugly feeling like a two dollar hand- job behind the bus station.         Hovel was formed in the fall of 2002 when long time friends resurfaced         and churned-out a set's worth of material.Impatient and frustrated         searching for the right vocalist Hovel chose to let their songs stand         on their own as instrumentals. Hovel is currently finishing up mixing         on their long overdue album and perfoming brawling -it -out live shows         in dives and flophouses around the region.",
+            "deleted": "",
+            "image": "artists/hovel/thumb.jpg",
+            "$id": "hovel",
+            "name": "Hovel"
+        },
+        {
+            "description": "A new entity that has caught our attention        fusing the discordant tension of post punk, the drive of gutter rock,        and stoner ambience and groove.  Currently working on their first full        length, we are happy to be making available their demo until its ready.        enjoy and be prepared.",
+            "deleted": "",
+            "image": "artists/nagato/thumb.jpg",
+            "$id": "nagato",
+            "name": "Nagato"
+        },
+        {
+            "description": "'...this is where surf music would be        if all the futuristic '60s predictions came true. This dark and mysterious         band sounds as if a very clean-cut and tattoo-free X cut the sound track         for an independent movie..... The difference between [the]N.U.R.B-S and         the earlier Ventures/Dick Dale/Beach Boys sound is the difference between         LA punk and Phil Spector pop -- it's darker, and reflective of a society         without optimism and struggling to get by. While things might get pretty bad,        dating and surfing are still options, but the beach is polluted and everyone         has an STD.' (Quoted from Carl F Gauze         http://www.ink19.com/issues/august2007/musicReviews/musicN/nurbs.html)",
+            "deleted": "",
+            "image": "artists/thenurbs/thumb.jpg",
+            "$id": "the_nurbs",
+            "name": "theN.U.R.B-S."
+        },
+        {
+            "description": "Born as a creative act in 1990 as a        collaboration of spoken word and music. It soon swelled into a        multi-media event with spoken/sung thematic performances that included        multiple found object percussionists/noise-ologists as well as traditional        instruments, and at one point interpretive dance and video. the revolving        cast included up to eight individuals and an ever progressing sound         throughout multiple disbanding and reformations... little documentation        of these early days remains unfortunately... over the years the band has        slimmed to core devoted members and coalesced into a standard four peice        outfit of melody and noise. thus it continues today.",
+            "deleted": "",
+            "image": "artists/vox_populi/thumb.jpg",
+            "$id": "vox_populi",
+            "name": "Vox Populi"
+        }
+    ],
+    "events": [
+        {
+            "deleted": "1269713391451",
+            "$id": "roe0001",
+            "title": "NAGATO Show",
+            "description": "NAGATO will be playing 123 Pleasant st. in Morgantown WV         on July 25th with West By God and TBA.",
+            "image": "releases/nagato/thumb.jpg",
+            "location": "123 Pleasant street, Mo'town WV",
+            "date": "July 25th, 2009"
+        },
+        {
+            "deleted": "1269713423889",
+            "$id": "roe002",
+            "title": "Cum Ducimus Voluptatibus",
+            "description": "Commodi, maiores veniam reiciendis alias dolor voluptas quia tempore recusandae.",
+            "image": "error/thumb.jpg",
+            "location": "at ipsa unde quod assumenda",
+            "date": "Sat Mar 27 2010 18:10:08 GMT-0000 (UTC)"
+        }
+    ],
+    "news": [
+        {
+            "description": "We are very pleased to announce that a new band has just        landed on R.O.E.. They are known as NAGATO, and we are pleased to be        making available their 5 song DIY release while they craft their debut        full length which we be available on R.O.E. later this fall.",
+            "calendar": "05/30/2009",
+            "deleted": "",
+            "$id": "reo0001",
+            "date": "May 30th, 2009",
+            "title": "NEW ARTIST ON RECORD OF EXISTENCE"
+        },
+        {
+            "description": "Curt Seiss, founder of Magnanimous Records and        prolific musician, will be releasing a multi-instrument solo        album that we just cant stop listening to!!        The rest of the details are under wraps for the moment, but        check back as more comes your way.",
+            "calendar": "06/12/2009",
+            "deleted": "",
+            "$id": "reo0002",
+            "date": "June 12th, 2009",
+            "title": "ANOTHER NEW ARTIST ON RECORDS OF EXISTENCE"
+        },
+        {
+            "description": "Vox Populi will soon be having their 3rd release with        us, and we cant wait.  The album is in the works.        This will be another Hand Pressed and Assembled Limited Edition.",
+            "deleted": "",
+            "$id": "reo0003",
+            "date": "September 30th, 2009",
+            "title": "UPCOMING VOX POPULI RELEASE!!"
+        },
+        {
+            "description": "In collaboration with Nonrational Records. We will        very shortly be able to make available          theN.U.R.B-S. full length Sui Generis.          These highly influential and essential surf rockers chart         new territory in the indie landscape. GOD WE LOVE THIS BAND!",
+            "deleted": "",
+            "$id": "reo0004",
+            "date": "December 4th  2009",
+            "title": "Our First Partner release!"
+        },
+        {
+            "description": "We are SOOOO very pleased to announce that very shortly        we will be launching our own DotCom!! .. Records of Existence         will be up and about just in time to showcase all         the new digs.  Much thanks to the venerable Mr. Thatcher for his        expertise and all around good-guy-ness!",
+            "calendar": "07/10/2009",
+            "deleted": "true",
+            "$id": "reo0005",
+            "date": "July 10th, 2009",
+            "title": "RECORDSOFEXISTENCE.COM COMING SOON!!"
+        },
+        {
+            "deleted": "true",
+            "$id": "reo0006"
+        },
+        {
+            "description": "Vox Populi III is nearing completion and should be heading for release early to mid summer. We've been listening to this around the office all along the way, and it still gets some heavy play... probably the most fulfilling Vox album yet!..",
+            "deleted": "",
+            "$id": "roe007",
+            "date": "March 14th 2010",
+            "title": "Vox Update."
+        },
+        {
+            "description": "Nagato are in the midst of recording their full length debut for R.O.E.. We expect it to be available late summer!",
+            "deleted": "",
+            "$id": "roe008",
+            "date": "April 7th 2010",
+            "title": "Nagato Update."
+        },
+        {
+            "description": "On Labor Day weekend, September 3rd-6th. The tenth and final Stoner Hands of Doom festival will be taking place in Frederick Md. at Krugs Place, returning to the festivals home on the east coast.  We are very pleased to announce that Nagato will be performing in the course of the weekend.\r\n\r\nfull details about SHOD X can be found here: http://www.cherylsweb.com/shod/",
+            "deleted": "1274752050880",
+            "$id": "roe009",
+            "date": "August 3rd 2009",
+            "title": "Nagato @ Stoner Hands Of Doom!!"
+        },
+        {
+            "description": "The new Accordion album will be up for pre-order very soon!!!  The official release date is June 15th.  Pre-orders will be delivered in advance of the release date.  We should have soundclip previews up on the Accordion page by May 26th!",
+            "deleted": "1274932986379",
+            "$id": "roe010",
+            "date": "May 15th 2010",
+            "title": "Accordion Preorders and Soundclips available VERY SOON!"
+        },
+        {
+            "description": "                 The new Accordion album will be up for pre-order very soon!!! The official release date is July 6th. Pre-orders will be delivered in advance of the release date. We should have soundclip previews up on the Accordion page by May 26th!             ",
+            "deleted": "",
+            "$id": "roe011",
+            "date": "May 20th 2010",
+            "title": "Accordion Preorders and Soundclips"
+        },
+        {
+            "description": "Today was a good day!  We awoke to the surprise that NPR's All Songs Considered had discovered the new Accordion EP and was featuring the track Gingerwood on today's show!  The Podcast is accessible thru iTunes or the A.S.C. homepage.  One of our favorite new music shows just got alot cooler to us.  Thanks Bob Boilen!",
+            "deleted": "",
+            "$id": "roe012",
+            "date": "May 24th 2010",
+            "title": "Accordion on NPR's All Songs Considered!!"
+        },
+        {
+            "description": "                 Accordion's debut is now available for pre-order in advance of its official release date.  The album is $10 postpaid and will arrive in advance of the release.                      ",
+            "deleted": "",
+            "$id": "roe013",
+            "date": "June 10th, 2010",
+            "title": "Accordion Debut Now Available for Pre-order!"
+        }
+    ],
+    "pressings": [
+        {
+            "deleted": "",
+            "$id": "roe001",
+            "ska": "6957632",
+            "release": "satyagraha",
+            "price": "10.0",
+            "description": "It is available as the R.O.E limited edition 1000 pressing         CD for $10 postpaid in the US.",
+            "count": "1000.0",
+            "format": "Compact Disc"
+        },
+        {
+            "deleted": "",
+            "$id": "roe002",
+            "ska": "6957679",
+            "release": "satyagraha",
+            "price": "12.0",
+            "description": "It is also available as the PyrE handnumbered limited edition 200 pressing CD         for $12 postpaid in the US.( *While Supplies Last* We had the remaining PyrE         copies hidden away until now. There are only a few left... )",
+            "count": "200.0",
+            "format": "Compact Disc"
+        },
+        {
+            "deleted": "",
+            "$id": "roe003",
+            "ska": "6851604",
+            "release": "pathos",
+            "price": "10.0",
+            "description": "Available in a limited edition 1000 pressing CD hand printed on a black sleeve         and sealed in a hand printed vellum envelope by the band.  Postpaid in         the US for $10",
+            "count": "1000.0",
+            "format": "Compact Disc"
+        },
+        {
+            "deleted": "",
+            "$id": "roe004",
+            "ska": "6851645",
+            "release": "hovel",
+            "price": "8.0",
+            "description": "Available in a 1st pressing CD for $8 Postpaid in the US.",
+            "count": "1000.0",
+            "format": "Compact Disc"
+        },
+        {
+            "deleted": "",
+            "$id": "roe005",
+            "ska": "free_nagato",
+            "release": "nagato",
+            "price": "0.0",
+            "description": "The Nagato demo is free with any order while supplies last!",
+            "count": "100.0",
+            "format": "Compact Disc"
+        },
+        {
+            "deleted": "",
+            "$id": "roe006",
+            "ska": "6851707",
+            "release": "sui_generis",
+            "price": "10.0",
+            "description": "The last remaining discs since the band went their seperate ways in 2007.        A must have for the collector of things rare and exotic, theN.U.R.B-S.        Sui Generis will be yet another bazaar extinct species of music you never        imagined existed, and can barely describe to your friends, if you don't have        the CD footprint to prove it ever really walked on this god-foresaken rock that's         spinning in outerspace.  These remaining CD's were donated to Records of         Existence and all proceeds will go to help new bands on the label         fossilize their own releases.",
+            "count": "360.0",
+            "format": "Compact Disc"
+        },
+        {
+            "deleted": "",
+            "$id": "roe007",
+            "ska": "VSPC29KZBGH26",
+            "release": "accordion",
+            "price": "10.00",
+            "description": "1st Presssing now available for Pre-order!  Release is July 6th 2010, but all Pre-orders will ship in advance and should arrive before the official release date!  Digipak packaging with all design and photography done by Curt Seiss of Accordion.  Price is postpaid to your door.",
+            "format": "Audio CD"
+        },
+        {
+            "deleted": "1.276133270613E12",
+            "$id": "roe008",
+            "release": "accordion",
+            "price": "0.0",
+            "description": [
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            ],
+            "count": "format",
+            "format": "Audio CD"
+        }
+    ],
+    "releases": [
+        {
+            "deleted": "",
+            "$id": "accordion",
+            "label_id": "roe004",
+            "featured": "true",
+            "description": "Accordion (which serves as the band name and album title) is a collection of dreamy, instrumental songs.   This album utilizes lo-fi sounds created by warm synths, acoustic guitar, reverberated bells, bowed strings, banjo, accordion drones, and other instruments to create melodies that weave through what are ultimately placid, mood pieces.  While the tracks hold their own as layered, atmospheric morsels, they are occasionally propelled by a booming drum track which drives the songs up and out of the primordial soup of movie-score haze.                     ",
+            "image": "artists/accordion/thumb.jpg",
+            "artist": "accordion",
+            "name": "Accordion",
+            "tracks": [
+                "01. eastern legend",
+                "02. world you",
+                "03. replace with gin",
+                "04. roquinto set",
+                "05. automatic signals",
+                "06. art of simulation",
+                "07. the abundance of unsteadiness",
+                "08. perceive the outline",
+                "09. gingerwood"
+            ]
+        },
+        {
+            "deleted": "",
+            "$id": "hovel",
+            "label_id": "roe003",
+            "featured": "",
+            "description": "        Hovel's 6 song knockout! Heavy, Groovy, instrumental rock that fills the         vo'$id' between the Monstrousness of the Melvins, the Soul Darkness of Sabbath,         and the Heavy edge of early Helmet..  They dont say a word...but you know         just what theyre sayin!  Hovel is a virtual supergroup of highly proficient         musicians who strip away all pretense and focus on making a record thats         true, and a record that rocks.",
+            "image": "releases/hovel/thumb.jpg",
+            "artist": "hovel",
+            "name": "Hovel",
+            "tracks": [
+                "01. Fuzzbuster",
+                "02. Gamma Minus Machine Minder",
+                "03. Wooden Suit",
+                "04. Twenty Six Inch Sonic Witch",
+                "05. Taking Off The Gov'nor",
+                "06. Gorilla Rib"
+            ]
+        },
+        {
+            "deleted": "",
+            "$id": "nagato",
+            "label_id": "roe003.5",
+            "featured": "",
+            "description": "        We are pleased to be making available their 5 song DIY release         while they craft their debut full length which we be available         on R.O.E. later this fall.",
+            "image": "releases/nagato/thumb.jpg",
+            "artist": "nagato",
+            "name": "Nagato",
+            "tracks": [
+                "01. Intro",
+                "02. South of Sedona",
+                "03. Brick by Brick",
+                "04. Tora! Tora! Tora!",
+                "05. The Glowing Sea"
+            ]
+        },
+        {
+            "deleted": "",
+            "$id": "pathos",
+            "label_id": "roe002",
+            "featured": "",
+            "description": "        Their 2nd Album, widely considered their 'Art-record'.  Pathos documents        the more theatric/concept side of Vox Populi swaying from a 15 minute thematic         punk 'rock opera' to spoken word/ambient explorations to melodic beauty and         full on noise arrangements.  Their most adventurous record that manages to         capture a remarkable diversity with an astounding sense of identity and         cohesion.  personal fave of the band.",
+            "image": "releases/pathos/thumb.jpg",
+            "artist": "vox_populi",
+            "name": "Pathos",
+            "tracks": [
+                "01. insert your hometown here",
+                "02. deathstyles of the poor and pathetic (corpses 1-6)",
+                "03. divine interrogative",
+                "04. walking wounded",
+                "05. river of life",
+                "06. end of days",
+                "07. chains",
+                "08. night vision",
+                "09. dead dog epiphany",
+                "10. battered",
+                "11. inquiry"
+            ]
+        },
+        {
+            "deleted": "",
+            "$id": "satyagraha",
+            "label_id": "roe001",
+            "featured": "",
+            "description": "        The 1st album by Vox Populi.  It was originally released on PyrE Records         in a limited edition of 200 and was re-released by us as our first offering         in a pressing of 1000.  It is hand printed by us and the band on recycled         paperboard and features 3 panels of blockprinting artwork and lettering hand        cut by a member of the band!!  Satyagraha is a moody post-punk album of         poignant intellect, sensible radicalism, soulful aggression, and melodic noise.        We loved it enough to start a label to put it out!!!",
+            "image": "releases/satyagraha/thumb.jpg",
+            "artist": "vox_populi",
+            "name": "Satyagraha",
+            "tracks": [
+                "01. everything",
+                "02. the day the language froze",
+                "03. family of one",
+                "04. welcome back",
+                "05. colorblind",
+                "06. great expectations",
+                "07. from the mouths of babes",
+                "08. chicken song",
+                "09. nothing",
+                "10. paradise",
+                "11. line in the gravel"
+            ]
+        },
+        {
+            "deleted": "",
+            "$id": "sui_generis",
+            "label_id": "roe003.6",
+            "featured": "true",
+            "description": "In the desert\r\nI saw a creature, naked, bestial,\r\nWho, squatting upon the ground,\r\nHeld his heart in his hands,\r\nAnd ate of it.\r\nI said, \"Is it good, friend?\"\r\n\"It is bitter ? bitter\", he answered,\r\n\"But I like it\r\nBecause it is bitter,\r\nAnd because it is my heart.\" \r\n\r\nstephen crane. In The Desert.",
+            "image": "releases/sui_generis/thumb.jpg",
+            "artist": "the_nurbs",
+            "name": "Sui Generis",
+            "tracks": [
+                "01. Sup your Love",
+                "02. The Only One",
+                "03. Midwest",
+                "04. Sea of Love",
+                "05. Cecilia Ann",
+                "06. Virtually Happy",
+                "07. Sevillanas",
+                "08. Pan Handle",
+                "09. Going Away Today",
+                "10. Irish Jig",
+                "11. Pink 14",
+                "12. Irrational Equation",
+                "13. Unami Tsunami"
+            ]
+        }
+    ]
+}

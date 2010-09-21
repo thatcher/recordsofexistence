@@ -8,92 +8,70 @@
 
 <url>
   <loc>http://www.recordsofexistence.com/</loc>
-  <lastmod>2010-02-28T13:42:49+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>1.00</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
   <loc>http://www.recordsofexistence.com/releases</loc>
-  <lastmod>2010-02-28T13:42:49+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
   <loc>http://www.recordsofexistence.com/artists</loc>
-  <lastmod>2010-02-28T13:42:49+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
   <loc>http://www.recordsofexistence.com/contact</loc>
-  <lastmod>2010-02-28T13:42:49+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
   <loc>http://www.recordsofexistence.com/news</loc>
-  <lastmod>2010-02-28T13:42:49+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://www.recordsofexistence.com/release/roe001</loc>
-  <lastmod>2010-02-28T13:42:49+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+  <loc>http://www.recordsofexistence.com/release/accordion</loc>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://www.recordsofexistence.com/release/roe002</loc>
-  <lastmod>2010-02-28T13:42:49+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+  <loc>http://www.recordsofexistence.com/release/sui_generis</loc>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
   <loc>http://www.recordsofexistence.com/events</loc>
-  <lastmod>2010-02-28T13:42:49+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://www.recordsofexistence.com/release/roe004</loc>
-  <lastmod>2010-02-28T13:42:49+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.64</priority>
+  <loc>http://www.recordsofexistence.com/release/nagato</loc>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://www.recordsofexistence.com/release/roe005</loc>
-  <lastmod>2010-02-28T13:42:49+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.64</priority>
+  <loc>http://www.recordsofexistence.com/release/satyagraha</loc>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://www.recordsofexistence.com/release/roe003</loc>
-  <lastmod>2010-02-28T13:42:49+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.64</priority>
+  <loc>http://www.recordsofexistence.com/release/hovel</loc>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://www.recordsofexistence.com/artist/roe001</loc>
-  <lastmod>2010-02-28T13:42:49+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.64</priority>
+  <loc>http://www.recordsofexistence.com/release/pathos</loc>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://www.recordsofexistence.com/artist/roe003</loc>
-  <lastmod>2010-02-28T13:42:49+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.64</priority>
+  <loc>http://www.recordsofexistence.com/artist/accordion</loc>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://www.recordsofexistence.com/artist/roe002</loc>
-  <lastmod>2010-02-28T13:42:49+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.64</priority>
+  <loc>http://www.recordsofexistence.com/artist/nagato</loc>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://www.recordsofexistence.com/artist/roe005</loc>
-  <lastmod>2010-02-28T13:42:49+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.64</priority>
+  <loc>http://www.recordsofexistence.com/artist/vox_populi</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.recordsofexistence.com/artist/hovel</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.recordsofexistence.com/artist/the_nurbs</loc>
+  <changefreq>monthly</changefreq>
 </url>
 </urlset>

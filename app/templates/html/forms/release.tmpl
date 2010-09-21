@@ -86,9 +86,9 @@
             {{ each(index, title) release.tracks }}
             <li>
                 <span class= "ss_sprite  ss_delete">
-                    <a href='${ $.env("root")+"admin/remove/tracks/"+"?release="+release.$id+"&index="+index }'>
-                        remove track | 
-                    </a>
+                <a href='${ $.env("root")+"admin/remove/tracks/"+"?release="+release.$id+"&index="+index }'>
+                    remove track | 
+                </a>
                 <input 
                     id=    '${ "tracks."+index }'
                     type=  'text' 
@@ -100,13 +100,13 @@
             {{ /each }}
         
             <li>
-                 <span class= "ss_sprite  ss_add">
-                    <a id=    'track.${ release.tracks.length }' 
-                       href=  '${ $.env("root")+"admin/add/tracks/?release="+release.$id }'
-                       name=  'track.${ release.tracks.length }'> 
-                       Add a new track
-                    </a>
-                </span>
+            <span class= "ss_sprite  ss_add">
+                <a id=    '${ "track."+release.tracks.length }' 
+                   href=  '${ $.env("root")+"admin/add/tracks/?release="+release.$id }'
+                   name=  '${ "track."+release.tracks.length }'> 
+                    Add a new track
+                </a>
+            </span>
             </li>
         </ul>
     </div>

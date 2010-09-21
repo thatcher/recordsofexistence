@@ -15,8 +15,7 @@
             image:{
                 pattern:/^[a-z0-9_]{1,32}$/,
                 not:[null],
-                msg:'url should be the data of the data folder, usually the \
-                    in lowercase and underscores'
+                msg:'url should be the data of the data folder, usually the in lowercase and underscores'
             },
             artist:{
                 pattern:/^[0-9]{3}$/,
@@ -36,13 +35,11 @@
             description:{
                 pattern:/^.{1,1024}$/,
                 not:[null],
-                msg:'describes the release. any valid string, but cannot be \
-                    empty or null, upto 1024 characters'
+                msg:'describes the release. any valid string, but cannot be empty or null, upto 1024 characters'
             },
             tracks:{
                 pattern:/^.{1,64}$/,
-                msg:'a list of track names for this release. names can be upto \
-                    64 characters long'
+                msg:'a list of track names for this release. names can be upto 64 characters long'
             },
             deleted:{
                 pattern:/^[0-9]{1,32}$/,
@@ -189,6 +186,7 @@
                 image:          'error/thumb.jpg',
                 tracks:         template_tracks,
                 deleted:        '',
+                featured:        '',
                 label_id:        ''
             }, options);
         }

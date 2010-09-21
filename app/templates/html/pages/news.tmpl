@@ -1,7 +1,7 @@
 {{ extend $.env("templates")+"html/base.tmpl" }}
 
 {{ block title }}
-<title>Records of Existence News</title>
+Records of Existence News
 {{ /block }}
 
 {{ block main }}
@@ -30,7 +30,7 @@
     {{ each news }}
     <div class='${ (this.deleted.length?"deleted":"") }'>
     {{ if admin }}
-        {{ include $.env("templates")+"html/forms/news.html?"+new Date().getTime() }}
+        {{ include $.env("templates")+"html/forms/news.tmpl" }}
     {{ else }}
         <h4>${ this.title }</h4> 
         <p>

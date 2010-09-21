@@ -55,11 +55,12 @@ jQuery.fn.extend({
 jQuery.extend({
     // note: render was changed to return a string not a jQuery object.
     // while fn.render does return a jquery object
-	render: function( tmpl, data, asArray ) {
+	render: function( tmpl, data, asArray, partial ) {
         var fn, request;
 		
 		// Use a pre-defined template, if available
 		if ( jQuery.templates[ tmpl ] ) {
+			//console.log('rendering template %s', tmpl);
 			fn = jQuery.templates[ tmpl ];
 		// We're pulling from a script node
 		} else if ( tmpl.nodeType ) {
@@ -70,7 +71,7 @@ jQuery.extend({
                 return jQuery.render({
                     async: false,
                     url: node.src, 
-                    templateData: data 
+                    templateData: data
                 });
             }else{
                 fn = elemData.tmpl || jQuery.tmpl( node.innerHTML );
@@ -81,28 +82,35 @@ jQuery.extend({
             // since it is expected to return the rendered template
             // as a string - might be nice to have optional arg for
             // callback of aynch template rendering. :DONE
-            var options = jQuery.extend( {}, tmpl, {
-                // url is a required property of the passed options
-                type: 'GET',
-                dataType: 'text',
-                success: function( text ){
-                    jQuery.templates[ tmpl.url ] = jQuery.tmpl( text );
-                    // if a rendering callback was provided, use it
-                    if( tmpl.success )
-                        tmpl.success( jQuery.render( tmpl.url, tmpl.templateData ) );
+			if(tmpl.url && jQuery.templates[ tmpl.url ]){
+				fn = jQuery.templates[ tmpl.url ];
+				
+                if( tmpl.success )
+                    tmpl.success( fn.call( tmpl.templateData, jQuery, tmpl.templateData, 0, tmpl.asArray, tmpl.partial ) );
+			}else{
+            	var options = jQuery.extend( {}, tmpl, {
+	                // url is a required property of the passed options
+	                type: 'GET',
+	                dataType: 'text',
+	                success: function( text ){
+	                    jQuery.templates[ tmpl.url ] = jQuery.tmpl( text );
+	                    // if a rendering callback was provided, use it
+	                    if( tmpl.success )
+	                        tmpl.success( jQuery.render( tmpl.url, tmpl.templateData, tmpl.asArray, tmpl.partial ) );
                         
-                },
-                error: function( xhr, status, e ){
-                    jQuery.templates[ tmpl.url ] = jQuery.tmpl( 
-                        'Failed to load template from '+tmpl.url +
-                        '('+status+')'+e
-                    );
-                    // if a rendering callback was provided, use it
-                    if( tmpl.error )
-                        tmpl.error( jQuery.render( tmpl.url, tmpl.templateData ) );
-                }
-            })
-            request = jQuery.ajax( options );
+	                },
+	                error: function( xhr, status, e ){
+	                    jQuery.templates[ tmpl.url ] = jQuery.tmpl( 
+	                        'Failed to load template from '+tmpl.url +
+	                        '('+status+')'+e
+	                    );
+	                    // if a rendering callback was provided, use it
+	                    if( tmpl.error )
+	                        tmpl.error( jQuery.render( tmpl.url, tmpl.templateData, tmpl.asArray, tmpl.partial  ) );
+	                }
+	            });
+		        request = jQuery.ajax( options );
+			}
             
             // for non async renderings if they provide no success callback
             // allow the rendered template to be returned
@@ -117,11 +125,11 @@ jQuery.extend({
 		// jQuery.templates to cache it.
 		if ( jQuery.isArray( data ) ) {
 			return jQuery.map( data, function( data, i ) {
-				return fn.call( data, jQuery, data, i );
+				return fn.call( data, jQuery, data, i, asArray, partial);
 			});
 
 		} else {
-			return fn.call( data, jQuery, data, 0 );
+            return fn.call( data, jQuery, data, 0, asArray, partial );
 		}
 	},
 	
@@ -138,7 +146,7 @@ jQuery.extend({
      *   jQuery.templates.foo = jQuery.tmpl("some long templating string");
      *   $("#test").append("foo", data);
      */
-	tmpl: function(str, data, i) {
+	tmpl: function(str, data, i, partial) {
         if(!(TAG && EXPRESSION)){
             TAG = new RegExp(
                 jQuery.tmpl.startTag + 
@@ -162,6 +170,8 @@ jQuery.extend({
             fnstring = "\n\
 var $ = jQuery, \n\
     T = [], \n\
+	asArray = arguments.length>3?arguments[3]:false,\n\
+	partial = arguments.length>4?arguments[4]:false,\n\
     _ = $.tmpl.filters; \n\
 \n\
 //make data available on tmpl.filters as object not part of global scope \n\
@@ -178,10 +188,9 @@ function pushT(value, _this, encode){\n\
 with($.extend(true, {}, _, $data)){\n\
 try{\n\
     T.push('" +
-
         // Convert the template into pure JavaScript
         str .replace(/([\\'])/g, "\\$1")
-            .replace(/[\r\t\n]/g, " ")
+            .replace(/[\r\n]/g, " $n ")
             .replace(EXPRESSION, jQuery.tmpl.startTag+"= $1"+jQuery.tmpl.endTag)
             .replace(TAG, function(all, slash, type, fnargs, args) {
                 var tmpl = jQuery.tmpl.tags[ type ];
@@ -196,7 +205,7 @@ try{\n\
                     "\n        T.push('";
                 
                 return result;
-            })
+            }).replace(/ \$n /g,"\\n")
 + "');\n\
 }catch(e){\n\
     if($.tmpl.debug){\n\
@@ -208,12 +217,12 @@ try{\n\
 }\n\
 //reset the tmpl.filter data object \n\
 _.data = null;\n\
-return T.join('')";
+return asArray ? T : T.join('')";
         
         
         //provide some feedback if they are in tmpl.debug mode
-        if (jQuery.tmpl.debug)
-            console.log('Generated Function: \n', fnstring);
+        //if (jQuery.tmpl.debug)
+        //    console.log('Generated Function: \n%s', fnstring);
         
         try{    
             fn = new Function("jQuery","$data","$i",fnstring );
@@ -222,7 +231,6 @@ return T.join('')";
             console.warn(fnstring);
             throw(e);
         }
-
         
         // Provide some basic currying to the user
 		return data ? fn.call( this, jQuery, data, i ) : fn;

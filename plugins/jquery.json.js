@@ -30,7 +30,7 @@
         for(i=0;i<this.length;i++){
             str += __JSON__.stringify(this[i], filter, indentValue||'');
             if(!(i+1 == this.length)){
-                str+=',\n'
+                str+=',\n';
             }
         }
 	    return str + ']';

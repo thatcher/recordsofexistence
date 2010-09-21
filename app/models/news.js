@@ -25,8 +25,7 @@
             description:{
                 pattern:/.{1,1024}/,
                 not:[null],
-                msg:'description is not required but must be a valid string, upto\
-                    1024 characters long'
+                msg:'description is not required but must be a valid string, upto 1024 characters long'
             },
             deleted:{
                 pattern:/^[0-9]{0,32}$/,
@@ -55,7 +54,7 @@
                         calendar: new Date()+"",
                         description:'We are unable to display information right now,\
                             the server may be experiencing a lost database connection.\
-                            Please check back again in a few moments.',
+                            Please check back again in a few moments.'
                     }]);
                 }
             });
@@ -78,7 +77,7 @@
                         calendar: new Date()+"",
                         description:'We are unable to display information right now,\
                             the server may be experiencing a lost database connection.\
-                            Please check back again in a few moments.',
+                            Please check back again in a few moments.'
                     }]);
                 }
             });

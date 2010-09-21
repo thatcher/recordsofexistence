@@ -1,7 +1,7 @@
-{{ extend $.env("templates")+"html/base.tmpl?" }}
+{{ extend $.env("templates")+"html/base.tmpl" }}
 
 {{ block title }}
-<title>Records of Existence Releases</title>
+Records of Existence Releases
 {{ /block }}
     
 {{ block main }}
@@ -48,7 +48,7 @@
                         </span>
                     {{ /if }}
                     <a href='${ $.env("root") }release/${ this.$id }'
-                       style='float:left;'>
+                       style=''>
                        <img
                             src='${ $.env("data") + this.image }'
                             alt='${ this.name }' 
@@ -87,7 +87,7 @@
                         </span>
                     {{ /if }}
                     <a href='${ $.env("root") }release/${ this.$id }'
-                       style='float:left;'>
+                       style=''>
                        <img
                             src='${ $.env("data") + this.image }'
                             alt='${ this.name }' 
@@ -126,7 +126,7 @@
                         </span>
                     {{ /if }}
                     <a href='${ $.env("root") }release/${ this.$id }'
-                       style='float:left;'>
+                       style=''>
                        <img
                             src='${ $.env("data") + this.image }'
                             alt='${ this.name }' 

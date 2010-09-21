@@ -37,6 +37,9 @@
                         '/'+domain.substring(0, domain.length-1) + '/'+ id + '?admin' :
                         '/'+domain +'?admin' 
                 }
+				if(event.request.headers['Accept'].match('json')){
+					event.response.headers['Location'] += '&fo=json';
+				}
             }
             
             log.debug(' %s / %s / %s : Completed.', action, domain, id);
@@ -104,6 +107,9 @@
                         status:   302,
                         "Location": $.env('root')+domain+"?admin"
                     };
+						if(event.request.headers['Accept'].match('json')){
+							event.response.headers['Location'] += '&fo=json';
+						}
                     return;
                 },
                 error: function(xhr, status, e){
@@ -139,6 +145,9 @@
                                 status:   302,
                                 "Location": $.env('root')+domain+"?admin"
                             };
+								if(event.request.headers['Accept'].match('json')){
+									event.response.headers['Location'] += '&fo=json';
+								}
                             return;
                         },
                         error: function(xhr, status, e){
@@ -182,6 +191,9 @@
                         status:   302,
                         "Location": $.env('root')+domain+"?admin"
                     };
+						if(event.request.headers['Accept'].match('json')){
+							event.response.headers['Location'] += '&fo=json';
+						}
                     return;
                 },
                 error: function(xhr, status, e){
@@ -218,6 +230,9 @@
                         status:   302,
                         "Location": $.env('root')+domain+"?admin"
                     };
+						if(event.request.headers['Accept'].match('json')){
+							event.response.headers['Location'] += '&fo=json';
+						}
                     return;
                 },
                 error: function(xhr, status, e){
@@ -235,7 +250,10 @@
             event.response.headers =  {
                 status:   302,
                 "Location": $.env('root')+'release/'+instance.release+"?admin"
-            };
+            };	
+				if(event.request.headers['Accept'].match('json')){
+					event.response.headers['Location'] += '&fo=json';
+				}
             
         },
         'add/pressings/' : function(id, event){
@@ -275,6 +293,9 @@
                             status:   302,
                             "Location": $.env('root')+'release/'+release+"?admin"
                         };
+							if(event.request.headers['Accept'].match('json')){
+								event.response.headers['Location'] += '&fo=json';
+							}
                         return;
                     },
                     error: function(xhr, status, e){
@@ -316,7 +337,10 @@
             event.response.headers =  {
                 status:   302,
                 "Location": $.env('root')+'release/'+release+"?admin"
-            };
+            };	
+				if(event.request.headers['Accept'].match('json')){
+					event.response.headers['Location'] += '&fo=json';
+				}
         },
         'restore/pressings/' : function(id, event){
             //check to see if this event defined an association
@@ -349,7 +373,10 @@
             event.response.headers =  {
                 status:   302,
                 "Location": $.env('root')+'release/'+release+"?admin"
-            };
+            };	
+				if(event.request.headers['Accept'].match('json')){
+					event.response.headers['Location'] += '&fo=json';
+				}
         },
         'add/tracks/' : function(id, event){
             //check to see if this event defined an association
@@ -417,6 +444,9 @@
                             status:   302,
                             "Location": $.env('root')+'release/'+release+"?admin"
                         };
+							if(event.request.headers['Accept'].match('json')){
+								event.response.headers['Location'] += '&fo=json';
+							}
                         return;
                     },
                     error: function(xhr, status, e){

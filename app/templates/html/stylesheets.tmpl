@@ -1,23 +1,11 @@
-<!--
-/**
- * @author thatcher
- */
--->
-<!--
-/**
- * Print Stylesheets
- */
--->
+<!--Print Stylesheets-->
 <link 	href='${ $.env("root")+"css/blueprint/print.css" }' 
 		rel="stylesheet"         
 		type="text/css" 
 		media="print"/>
 
-<!--
-/**
- * Screen Stylesheets
- */
--->		
+<!--Screen Stylesheets-->		
+
 <link 	href='${ $.env("root")+"css/blueprint/screen.css" }'   
 		type="text/css" 
 		media="screen, projection"
@@ -31,24 +19,20 @@
         rel="stylesheet" />
 
 
-<!-- 
-/**
- *  extra stylesheet for admin mode 
- */
--->
-{{ if admin }}
+<!-- extra stylesheet for admin mode -->
 <link
     href='${ $.env("root")+"css/site-admin.css" }' 
     type="text/css"
     rel="stylesheet"
 />
-{{ /if }}
 
-<!--
-/**
- * Quirks Mode Stylesheets
- */
--->				
+<link
+    href='${ $.env("root")+"css/mobile.css" }' 
+    type="text/css"
+    rel="stylesheet"
+/>
+
+<!--Quirks Mode Stylesheets-->				
 <!--[if lt IE 8]>
 <link 	href="/css/blueprint/ie.css"
 		type="text/css" 

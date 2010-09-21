@@ -3,23 +3,26 @@
  */
 (function($, $V){
     
-    var log;
+    var log,
+		templates;
     
     $V.Site = function(options){
         $.extend(true, this, options);
         log = $.logger('RecordsOfExistence.Views.Site');
+		templates = {};
     };
     
     
     $.extend($V.Site.prototype, {
         write: function(model){
+			var rendered = '';
             log.info("Rendering html template %s ", model.template);
-            $.render({
+           	$.render({
                 async:false,
                 url: model.template,
                 templateData: model,
                 success: function(response){
-                    log.debug("Rendered template %s ", response);
+                    log.debug("Rendered template");
                     rendered = response;
                 },
                 error: function(xhr, status, e){
@@ -28,9 +31,36 @@
                     throw('Error Rendering template '+ model.template);
                 }
             });
-            log.info("Finsihed rendering html template %s ", model.template);
+	        log.info("Finsihed rendering html template %s ", model.template);
             return rendered;
-        }
+        },
+		update: function(model){
+			log.debug('updating view');
+			//basic 'partial' rendering
+			var tmpl;
+           	$.render({
+                async:false,
+                url: model.template,
+                templateData: model,
+				partial: true,
+				asArray: true,
+                success: function(response){
+                    log.debug("Rendered template");
+                    tmpl = response;
+                },
+                error: function(xhr, status, e){
+                    log.error('failed to render : %s ', model.template).
+                        exception(e);
+                    throw('Error Rendering template '+ model.template);
+                }
+            });
+	        log.info("Finsihed rendering html template %s ", model.template);
+			
+			document.title = tmpl.slice(tmpl.blocks.title.start,tmpl.blocks.title.end).
+				join('');
+			$('#main').empty().append(tmpl.slice(tmpl.blocks.main.start,tmpl.blocks.main.end).
+				join(''));
+		}
     });
     
     $.tmpl.filters.fn.extend({

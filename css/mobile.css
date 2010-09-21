@@ -1,0 +1,87 @@
+
+/*------------------------------------*\
+	IPHONE/ANDROID  and (max-device-width: 480px)
+\*------------------------------------*/
+
+@media screen and (max-device-width: 480px){
+	body{
+	padding:0;
+	margin:0;
+	}
+	.container {
+	width:100%;
+	margin:0;
+	}
+	.column, div.span-1, div.span-2, div.span-3, div.span-4, div.span-5, div.span-6, div.span-7, div.span-8, div.span-9, div.span-10, div.span-11, div.span-12, div.span-13, div.span-14, div.span-15, div.span-16, div.span-17, div.span-18, div.span-19, div.span-20, div.span-21, div.span-22, div.span-23, div.span-24 {
+	float:none;
+	clear:both;
+	margin:0;
+	padding:0;
+	width:100%;
+	}
+	div.colborder{
+		margin:0;
+		padding:0;
+	}
+	#header div {
+	margin:0;
+	padding:0;
+	}
+	#global-nav {
+	margin:0;
+	padding:0;
+	}
+	#footer div {
+	margin:0;
+	padding:0;
+	}
+	body div.colborder {
+	border: none;
+	}
+	.push-1, .push-2, .push-3, .push-4, .push-5, .push-6, .push-7, .push-8, .push-9, .push-10, .push-11, .push-12, .push-13, .push-14, .push-15, .push-16, .push-17, .push-18, .push-19, .push-20, .push-21, .push-22, .push-23, .push-24 {
+		float:none;
+		clear:both;
+		margin:1px;
+		width:100%;
+	}
+	#main h3 {
+	margin:0;
+	padding:5px 0 0 8%;
+	}
+	#welcome img{
+		display:none;
+	}
+	#global-nav ul {
+	float:none;
+	margin-bottom:0;
+	margin-right:5px;
+	}
+	br{
+		display:none;
+	}
+	#global-nav a{
+	border:1px solid #AAA;
+	font-size:10px;
+	margin:3px;
+	padding:5px;
+	}
+	#recentnews p {
+	color:#CCCCCC;
+	margin:0;
+	padding:0;
+	}
+	#news div, #news h4, #news p{
+		margin:0;
+		padding:0;
+		width:100%;
+	}
+	#news div{
+		border-bottom:1px solid #AAA;
+		margin: 8px 0;
+		padding: 4px 0;
+	}
+	#upcomingevents, #releases, #artists, #artist, #contact, #mailing_list, #main p {
+		margin-top:0;
+		margin-bottom:0;
+	}
+}

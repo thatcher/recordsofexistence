@@ -36,8 +36,7 @@
             description:{
                 pattern:/.{1,1024}/,
                 not:[null],
-                msg:'description is not required but must be a valid string, upto\
-                    1024 characters long'
+                msg:'description is not required but must be a valid string, upto 1024 characters long'
             },
             deleted:{
                 pattern:/^[0-9]{1,32}$/,

@@ -1,7 +1,7 @@
 {{ extend $.env("templates")+"html/base.tmpl" }}
     
 {{ block title }}
-    <title>Records of Existence Artist ${ artist.name }</title>
+    Records of Existence Artist ${ artist.name }
 {{ /block }}
 
 {{ block main }}
@@ -12,7 +12,7 @@
         </a>
     </h3>
     {{ if admin }}
-        {{ include $.env("templates")+"html/forms/artist.tmpl?"+(new Date().getTime()) }}
+        {{ include $.env("templates")+"html/forms/artist.tmpl" }}
     {{ else }}
     <div class='first column span-7 push-2 colborder'>
         

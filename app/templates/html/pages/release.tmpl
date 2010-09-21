@@ -1,7 +1,7 @@
 {{ extend $.env("templates")+"html/base.tmpl" }}
 
 {{ block title }}
-<title>Records of Existence Release ${ release.name }</title>
+Records of Existence Release ${ release.name }
 {{ /block }}
 
 {{ block main }}
@@ -9,7 +9,7 @@
 
     <h3><a href='${ $.env("root")+"releases" }'>&lt; releases</a></h3>
     {{ if admin }}
-        {{ include $.env("templates")+"html/forms/release.tmpl?"+(new Date().getTime()) }}
+        {{ include $.env("templates")+"html/forms/release.tmpl" }}
     {{ else }}
     <div class='first column span-5 colborder'>
         <br/><br/>
@@ -55,7 +55,7 @@
         <h3> pressings </h3>
         {{ if admin }}
             {{ each pressings }}
-            {{ include $.env("templates")+"html/forms/pressing.tmpl?"+(new Date().getTime()) }}    
+            {{ include $.env("templates")+"html/forms/pressing.tmpl" }}    
             {{ /each }}
             <div style='clear:both;text-align:center;'>
                 <span  class= "ss_sprite  ss_add" >
@@ -72,7 +72,7 @@
                 </div>
             </div>
             <div class='last column small box span-4'>
-                {{ include $.env("templates")+"html/forms/paypal.tmpl?"+(new Date().getTime()) }}
+                {{ include $.env("templates")+"html/forms/paypal.tmpl" }}
             </div>  
             {{ /each }}
         {{ /if }}

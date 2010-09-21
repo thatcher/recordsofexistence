@@ -8,14 +8,16 @@ var RecordsOfExistence = {
 	Models:{},
 	Views:{},
 	Controllers:{},
-	Services:{}
+	Services:{},
+	Data:{}
 };
 (function($){
  	
     $.scan([
         "RecordsOfExistence.Models",    
         "RecordsOfExistence.Views",     
-        "RecordsOfExistence.Services",
+        "RecordsOfExistence.Services", 
+        "RecordsOfExistence.Controllers",
         "Claypool.Services",
         "GAE.Services"
     ]);

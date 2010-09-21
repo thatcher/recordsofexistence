@@ -3,7 +3,13 @@
     xmlns="http://java.sun.com/xml/ns/javaee" 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-    <!-- Initializes the log4j container  
+    <!-- MIME mapping -->
+	<mime-mapping>
+		<extension>tmpl</extension>
+		<mime-type>text/plain</mime-type>
+	</mime-mapping>
+	
+	<!-- Initializes the log4j container  
 		- jquery-claypool provides it's own pure javascript category logging
 		- framework, so modifying this servlet only affect the logging
 		- in any additional java you are leveraging.  In particular

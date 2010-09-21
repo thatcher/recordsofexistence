@@ -6,6 +6,47 @@
  *  so we simply include them from the 
  *  public server path
  */ -->
-<script src='${ $.env("root")+"lib/jquery.js" }'        type="text/javascript" ><!-- --></script>
-<script src='${ $.env("root")+"scripts/admin.js" }'     type="text/javascript" ><!-- --></script>
-        
+	
+{{ if $.env("minify") }} 
+<script src='${ $.env("root")+"dist/app.min.js" }'     	type="text/javascript" ></script>
+{{ else }}
+<script src='${ $.env("root")+"lib/firebug/firebug.js" }'   type="text/javascript" ></script>
+<script src='${ $.env("root")+"lib/jquery.js" }'        	type="text/javascript" ></script>
+<script src='${ $.env("root")+"lib/jquery.claypool.js" }'   type="text/javascript" ></script>
+<script src='${ $.env("root")+"lib/jquery.livequery.js" }'  type="text/javascript" ></script>
+
+<script src='${ $.env("root")+"plugins/jquery.json.js" }'   type="text/javascript" ></script>
+<script src='${ $.env("root")+"plugins/jquery.tmpl.js" }'   type="text/javascript" ></script>
+<script src='${ $.env("root")+"plugins/tmpl.blocks.js" }'   type="text/javascript" ></script>
+<script src='${ $.env("root")+"plugins/tmpl.extend.js" }'   type="text/javascript" ></script>
+<script src='${ $.env("root")+"plugins/tmpl.filters.js" }'  type="text/javascript" ></script>
+<script src='${ $.env("root")+"plugins/tmpl.switch.js" }'   type="text/javascript" ></script>
+<script src='${ $.env("root")+"plugins/creole.js" }'   		type="text/javascript" ></script>
+
+<script src='${ $.env("root")+"app/configs/config.js" }'     	type="text/javascript" ></script>
+<script src='${ $.env("root")+"app/configs/environments.js" }'  type="text/javascript" ></script>
+<script src='${ $.env("root")+"app/configs/logging.js" }'     	type="text/javascript" ></script>
+<script src='${ $.env("root")+"app/configs/routes.js" }'     	type="text/javascript" ></script>
+
+<script src='${ $.env("root")+"app/models/artists.js" }'     	type="text/javascript" ></script>
+<script src='${ $.env("root")+"app/models/events.js" }'     	type="text/javascript" ></script>
+<script src='${ $.env("root")+"app/models/news.js" }'     		type="text/javascript" ></script>
+<script src='${ $.env("root")+"app/models/pressings.js" }'     	type="text/javascript" ></script>
+<script src='${ $.env("root")+"app/models/releases.js" }'     	type="text/javascript" ></script>
+<script src='${ $.env("root")+"app/views/site.js" }'     		type="text/javascript" ></script>
+<script src='${ $.env("root")+"app/controllers/site.js" }'     	type="text/javascript" ></script>
+<script src='${ $.env("root")+"app/services/site.js" }'     	type="text/javascript" ></script>
+
+<script src='${ $.env("root")+"app/boot/client.js" }'     	type="text/javascript" ></script>
+
+<script src='${ $.env("root")+"scripts/admin.js" }'     	type="text/javascript" ></script>
+
+{{ if $.env("preload") }}
+<script src='${ $.env("root")+"dist/data.js" }'     	type="text/javascript" ></script>
+{{ /if }}
+
+{{ if $.env("precompile") }}
+{{ include $.env("templates")+"html/templates.tmpl" }}
+{{ /if }}
+
+{{ /if }}

@@ -1,7 +1,7 @@
 {{ extend $.env("templates")+"html/base.tmpl" }}
 
 {{ block title }}
-<title>Records of Existence Events</title>
+Records of Existence Events
 {{ /block }}
 
 {{ block main }}
@@ -32,7 +32,7 @@
         
         <div class='event column span-5 ${admin?"":"colborder"} ${ (this.deleted.length?"deleted":"") }'>
         {{ if admin }}
-            {{ include $.env("templates")+"html/forms/event.tmpl?"+new Date().getTime() }}
+            {{ include $.env("templates")+"html/forms/event.tmpl" }}
         {{ else }}
             <span>${ this.date }</span>
             <br/>

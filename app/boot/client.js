@@ -6,12 +6,13 @@ jQuery.noConflict();
 (function($){
     
     //A static logger for any initialization routines we might add here
-    var log = $.logger("RecordsOfExistence");
+    var log = $.logger("RecordsOfExistence"),
+		hash = '';
     
     //The environments are described in environments.js
     try{
- 	   //$.env('defaults', "dev.client"); 
-       $.env('defaults', "appengine.server");
+		//use automap based on window.location
+       	$.env();
        
  	}catch(e){
  	   log.error("Environmental selection is invalid!").exception(e);
@@ -22,6 +23,7 @@ jQuery.noConflict();
         $.boot(function(){
           //you can do additional initialization here
             log.info("Successfully Initialized Application");
+			setInterval($.$('#siteController').go, 200);
         });
     });    
     

@@ -20,14 +20,12 @@
             name:{
                 pattern:/^.{1,64}$/,
                 not:[null],
-                msg:'name must be defined, less than 64 characters and \
-                     can use any characters'
+                msg:'name must be defined, less than 64 characters and can use any characters'
             },
             description:{
                 pattern:/.{1,512}/,
                 not:[null],
-                msg:'description is not required but must be a valid string, upto\
-                    512 characters long'
+                msg:'description is not required but must be a valid string, upto 512 characters long'
             },
             deleted:{
                 pattern:/^[0-9]{1,32}$/,

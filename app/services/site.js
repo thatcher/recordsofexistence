@@ -148,7 +148,7 @@
                                 artist:     artist,
                                 release:    release,
                                 pressings:  pressings,
-                                template:   $.env('templates') + 'html/pages/release.tmpl?id='+release.id
+                                template:   $.env('templates') + 'html/pages/release.tmpl'
                             }).
                             render();
                     });

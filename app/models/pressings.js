@@ -14,8 +14,7 @@
             },
             ska:{
                 pattern:/^.{7}$/,
-                msg:'ska is the paypal id generated for the pressing if it for\
-                    sale.'
+                msg:'ska is the paypal id generated for the pressing if it for sale.'
             },
             release:{
                 pattern:/^[0-9]{3}$/,
@@ -30,14 +29,12 @@
             count:{
                 pattern:/^[0-9]{1,5}$/,
                 not:[null],
-                msg:'a positive integer specifying the total number records \
-                    for this pressing'
+                msg:'a positive integer specifying the total number records for this pressing'
             },
             format:{
                 pattern:/^(Compact Disc)$/,
                 not:[null],
-                msg:'The format of the pressing (currently only "Compact Disc" \
-                    is supported).'
+                msg:'The format of the pressing (currently only "Compact Disc" is supported).'
             },
             description:{
                 pattern:/^.+$/,
@@ -137,10 +134,11 @@
                 $id:'404',
                 release:'000',
                 price:0,
+				ska:'',
                 count: 'format',
                 format:'Audio CD',
                 deleted: '',
-                description:$.paragraphs(1,true)
+                description:$.paragraph(false)
             }, options);
         }
     });

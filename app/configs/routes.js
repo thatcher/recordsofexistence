@@ -4,7 +4,7 @@
 
 (function($){
 
-   $.routes({
+    $.routes({
         "hijax:server": [{
             id: "#recordsofexistence-rest-routes",
             hijaxMap:
@@ -36,8 +36,22 @@
         },{
             id:"#recordsofexistence-proxy-routes",
             hijaxMap:
-                [{ urls :"/sdb/$",                                              controller:"#sdbProxyService"}]
-        }]   
-    });
+                [{ urls :"/sdb/$",                controller:"#sdbProxyService"}]
+        }],
+		"hijax:a":[{
+            id:"#recordsofexistence-click-routes",
+			filter: ':not([href$=mp3])',
+            hijaxMap:
+                [{ urls :"<:url(^.*$):>",    	  controller:"#siteController"}]
+			
+		}],	
+		"hijax:form":[{
+	        id:"#recordsofexistence-submit-routes",
+			filter: ':not([action$=webscr])',//paypal
+            hijaxMap:
+                [{ urls :"<:url(^.*$):>",    	  controller:"#siteController", 	action:"submit"}]
+
+		}]
+	});
     
 })(jQuery);
