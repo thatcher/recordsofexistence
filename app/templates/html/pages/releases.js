@@ -76,7 +76,7 @@ function anonymous(jQuery, $data, $i) {
                         pushT($.env("root") + "artists?admin", this);
                         T.push("'>\n            Add release (via artist)\n            </a>\n        </span><br/>\n        <a id='show_deleted'\n           href='#show/deleted'>\n           show deleted releases\n        </a>\n        <span> | </span>\n        <a id='hide_deleted'\n           href='#hide/deleted'>\n           hide deleted releases\n        </a>\n    </div>\n    ");
                     }
-                    T.push(" \n    \n    <div class='first column span-7 '>\n        <ul>\n            ");
+                    T.push(" \n    \n    <div class='first column span-7 prepend-1'>\n        <ul>\n            ");
                     jQuery.each(_(releases).every_third_from(0), function ($i) {
                         with (this) {
                             T.push("\n            <li>\n                <div class='span-7  ");

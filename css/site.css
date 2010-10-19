@@ -41,12 +41,12 @@ body div{
     background-color:transparent;
 }
 body a{
-    color:#678;
+    color:#ABC;
     border-bottom:1px dashed #777777;
     text-decoration: none;
 }
 body img a{
-    color:#678;
+    color:#ABC;
 }
 body div.colborder{
     border-right-color:#999;
@@ -55,21 +55,21 @@ body form input{
    margin:1em;
 }
 h1, h2, h3, h4, h5, h6, strong, span.small {
-    color:#678;
+    color:#ABC;
     font-weight:normal;
     
 }
 h1, h2, h3{
     margin:0 0 1em 1em;
-    color:#678;
+    color:#ABC;
     /*border-top:1px dotted #999999;*/
 }
 a:hover{
-   color:#EEE;
+   color:#BFB38F;
 }
 
 p{
-    color:#DDD;
+    color:#EEE;
 }
 
 
@@ -223,10 +223,11 @@ p{
 
 
 #newreleases{
-    margin:1em;
+    margin:0 1em;
+	padding:1em 0;
 }
 #newreleases h3{
-   margin:0 1em;
+   margin:0  1em;
    border:none;
 }
 #newreleases ul {
@@ -281,7 +282,7 @@ p{
 }
 #upcomingevents ul li:hover{
    border:1px dashed #EEE;
-   /*background-color:#678;*/
+   /*background-color:#ABC;*/
   padding:0;
 }
 #upcomingevents ul li h6{
@@ -679,3 +680,204 @@ p{
 }
 /*****************************/
 
+
+ /****************************
+ * 
+ * #admin forms
+ * 
+ * */
+body #main form input{
+    background-color:#000;
+    color:#FFF;
+    margin:1px;
+}
+
+body #main form .ss_sprite{
+    color:#567;
+}
+body #main form .ss_sprite a{
+    font-size:10px;
+    color:#567;
+}
+
+#main form textarea{
+    background-color:#000;
+    color:#FFF;
+    margin:0;
+    border:none;
+    font-family:Verdana,Geneva,Arial,Helvetica,sans-serif;
+    font-size:12px;
+    width:100%;
+}
+
+#main form input.submit{
+    border: 1px dotted #fff;
+    float:right;
+}
+
+/*****************************/
+#main #editArtist #name{
+    text-align:right;
+    font-size:14px;
+    font-weight: bold;
+}
+#main #editArtist #image{
+    text-align:right;
+}
+
+#main #editArtist #description{
+    text-align:left;
+}
+
+#main #editArtist #image{
+    width:100%;
+}
+
+#main #editArtist input.submit{
+    float:right;
+    font-size:14px;
+    font-weight: bold;
+}
+/*****************************/
+
+#main #editRelease textarea{
+    height:130px;
+}
+#main #editRelease ol input{
+    padding:2px;
+    width:auto;
+}
+
+
+/*****************************/
+#main div.pressing textarea{
+    height:140px;
+}
+
+/*****************************/
+
+
+#main #news form textarea.description{
+    height:110px;
+}
+#main #news form span.title{
+    margin-left:60px;
+}
+#main #news form input.title{
+    width:300px;
+    font-size:13px;
+    margin-left:60px;
+}
+#main #news form input.submit{
+    padding:2px;
+    margin-bottom:20px;
+    width:100px;
+}
+#main #news form .date {
+    width:200px;
+    font-size:12px;
+    margin-left:60px;
+}
+#main #news hr {
+    background-color:#567;
+}
+
+/*****************************/
+
+#main #events form input, #main #events form textarea{
+    text-align:center;
+}
+#main #events span.date{
+    margin-top:-20px;
+}
+
+
+/*------------------------------------*\
+	IPHONE/ANDROID  
+\*------------------------------------*/
+
+@media screen and (max-device-width: 480px){
+	body{
+	padding:0;
+	margin:0;
+	}
+	.container {
+	width:100%;
+	margin:0;
+	}
+	.column, div.span-1, div.span-2, div.span-3, div.span-4, div.span-5, div.span-6, div.span-7, div.span-8, div.span-9, div.span-10, div.span-11, div.span-12, div.span-13, div.span-14, div.span-15, div.span-16, div.span-17, div.span-18, div.span-19, div.span-20, div.span-21, div.span-22, div.span-23, div.span-24 {
+	float:none;
+	clear:both;
+	margin:0;
+	padding:0;
+	width:100%;
+	}
+	.prepend-1{
+		padding-left:0;
+	}
+	div.colborder{
+		margin:0;
+		padding:0;
+	}
+	#header div {
+	margin:0;
+	padding:0;
+	}
+	#global-nav {
+	margin:0;
+	padding:0;
+	}
+	#footer div {
+	margin:0;
+	padding:0;
+	}
+	body div.colborder {
+	border: none;
+	}
+	.push-1, .push-2, .push-3, .push-4, .push-5, .push-6, .push-7, .push-8, .push-9, .push-10, .push-11, .push-12, .push-13, .push-14, .push-15, .push-16, .push-17, .push-18, .push-19, .push-20, .push-21, .push-22, .push-23, .push-24 {
+		float:none;
+		clear:both;
+		margin:1px;
+		width:100%;
+	}
+	#main h3 {
+	margin:0;
+	padding:5px 0 0 8%;
+	}
+	#welcome img{
+		display:none;
+	}
+	#global-nav ul {
+	float:none;
+	margin-bottom:0;
+	margin-right:5px;
+	}
+	br{
+		display:none;
+	}
+	#global-nav a{
+	border:1px solid #AAA;
+	font-size:10px;
+	margin:3px;
+	padding:5px;
+	}
+	#recentnews p {
+	color:#CCCCCC;
+	margin:0;
+	padding:0;
+	}
+	#news div, #news h4, #news p{
+		margin:0;
+		padding:0;
+		width:100%;
+	}
+	#news div{
+		border-bottom:1px solid #AAA;
+		margin: 8px 0;
+		padding: 4px 0;
+	}
+	#upcomingevents, #releases, #artists, #artist, #contact, #mailing_list, #main p {
+		margin-top:0;
+		margin-bottom:0;
+	}
+}

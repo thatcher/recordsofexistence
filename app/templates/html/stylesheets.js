@@ -17,11 +17,7 @@ function anonymous(jQuery, $data, $i) {
             pushT($.env("root") + "css/sprite.css", this);
             T.push("'   \n        type=\"text/css\" \n        media=\"screen, projection\"\n        rel=\"stylesheet\" />\n<link   href='");
             pushT($.env("root") + "css/site.css", this);
-            T.push("' \n        type=\"text/css\" \n        rel=\"stylesheet\" />\n\n\n<!-- extra stylesheet for admin mode -->\n<link\n    href='");
-            pushT($.env("root") + "css/site-admin.css", this);
-            T.push("' \n    type=\"text/css\"\n    rel=\"stylesheet\"\n/>\n\n<link\n    href='");
-            pushT($.env("root") + "css/mobile.css", this);
-            T.push("' \n    type=\"text/css\"\n    rel=\"stylesheet\"\n/>\n\n<!--Quirks Mode Stylesheets-->\t\t\t\t\n<!--[if lt IE 8]>\n<link \thref=\"/css/blueprint/ie.css\"\n\t\ttype=\"text/css\" \n\t\tmedia=\"screen, projection\"\n\t\trel=\"stylesheet\" />\n <![endif]-->\n");
+            T.push("' \n        type=\"text/css\" \n        rel=\"stylesheet\" />\n\n\n<!--Quirks Mode Stylesheets-->\t\t\t\t\n<!--[if lt IE 8]>\n<link \thref=\"/css/blueprint/ie.css\"\n\t\ttype=\"text/css\" \n\t\tmedia=\"screen, projection\"\n\t\trel=\"stylesheet\" />\n <![endif]-->\n");
         }
         catch (e) {
             if ($.tmpl.debug) {

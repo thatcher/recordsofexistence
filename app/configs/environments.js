@@ -20,17 +20,17 @@
         },
 	    defaults:{
             root:'/',
-			precompile: true,
+			precompile: false,
 			preload: false,
 			minify: false,
 			templates:'http://localhost:8080/app/templates/',
             initialdata:'http://localhost:8080/data/',
-            data:'http://roe-prod.s3.amazonaws.com/',
-            host:'sdb.amazonaws.com',
+			data:'http://roe-prod.s3.amazonaws.com/',
             dataType:'text',
             db:'jQuery.gdb',
             dbconnection:{'default':{
                 /*
+	            host:'sdb.amazonaws.com',
                 endpoint:'https://sdb.amazonaws.com/',
                 accessKeyId:AWS.accessKeyId,
                 secretKey:AWS.secretKey,
@@ -53,7 +53,10 @@
                 initialdata:'http://www.recordsofexistence.com/data/',
                 data:'http://roe-prod.s3.amazonaws.com/'
 	        },
-			client:{}
+			client:{
+				data:'http://roe-prod.s3.amazonaws.com/',
+	            templates:'http://www.recordsofexistence.com/app/templates/'
+			}
 	    },
 	    //-------------------------------------------------------------------------------------//
 	    //  -   DEVELOPMENT CONFIGURATION   -

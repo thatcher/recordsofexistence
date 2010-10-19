@@ -5,7 +5,49 @@ Records of Existence
 {{ /block }}
 
 {{ block main }}
-<div class="span-17 column first">
+<div class="span-6 column first prepend-1">
+    <div id='newreleases'>
+        <h3>new <a href='${ $.env("root")+"releases" }'>releases</a></h3>
+        <ul>
+            {{ each recent }}
+            <li  class='clear'>
+                <a href='${ $.env("root")+"release/"+this.$id }'>
+                    <span class='small'>${ this.name }</span>
+                    <img src='${ $.env("data")+this.image }'
+                         alt='${ this.name }'
+                         height='80px'
+                    />
+                </a>
+                <p>${ this.description.substring(0,128)+"..." }</p>
+                <br/>
+            </li>
+            {{ /each }}
+         </ul>
+    </div>
+	{{ if events.length > 0 }}
+    <div id='upcomingevents'>
+        <h3>upcoming <a href='${ $.env("root")+"events" }'>events</a></h3>
+        <p><em>click on an event for more information</em></p>
+        <ul>
+            {{ each events }}
+            <li  class='clear'>
+                <h6 style='color:white;'>${ this.date }</h6>
+                <a href='${ $.env("root")+"events" }'>
+                    <img
+                        src='${ $.env("data") + this.image }'
+                        alt='${ this.title + "  "+this.location }'
+                        title='${ this.title+"  "+this.location }'
+                        height='30px'
+                    />
+                    <span class='small'>${ this.title }</span>
+                </a>
+            </li>
+            {{ /each }}
+         </ul>
+    </div>
+	{{ /if }}
+</div>
+<div class="span-16 column last">
     <div id='welcome'>
         <h3>welcome</h3>
         <div class='span-4 push-2 column first colborder'>
@@ -34,46 +76,6 @@ Records of Existence
            {{ /each }}
         </ul>
         <a href='${ $.env("root")+"news" }'>news archives</a>
-    </div>
-</div>
-<div class="span-6 column last">
-    <div id='newreleases'>
-        <h3>new <a href='${ $.env("root")+"releases" }'>releases</a></h3>
-        <ul>
-            {{ each recent }}
-            <li>
-                <a href='${ $.env("root")+"release/"+this.$id }'>
-                    <span class='small'>${ this.name }</span>
-                    <img src='${ $.env("data")+this.image }'
-                         alt='${ this.name }'
-                         height='80px'
-                    />
-                </a>
-                <p>${ this.description.substring(0,128)+"..." }</p>
-                <br/>
-            </li>
-            {{ /each }}
-         </ul>
-    </div>
-    <div id='upcomingevents'>
-        <h3>upcoming <a href='${ $.env("root")+"events" }'>events</a></h3>
-        <p><em>click on an event for more information</em></p>
-        <ul>
-            {{ each events }}
-            <li>
-                <h6 style='color:white;'>${ this.date }</h6>
-                <a href='${ $.env("root")+"events" }'>
-                    <img
-                        src='${ $.env("data") + this.image }'
-                        alt='${ this.title + "  "+this.location }'
-                        title='${ this.title+"  "+this.location }'
-                        height='30px'
-                    />
-                    <span class='small'>${ this.title }</span>
-                </a>
-            </li>
-            {{ /each }}
-         </ul>
     </div>
 </div>
 {{ /block }}
